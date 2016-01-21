@@ -6,6 +6,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 
+/** Base Class for Elements. */
 @JSName("sap.ui.core.Element")
 @js.native
 class Element(id: String = js.native,

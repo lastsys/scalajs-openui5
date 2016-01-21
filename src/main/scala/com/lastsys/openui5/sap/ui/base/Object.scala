@@ -3,6 +3,7 @@ package com.lastsys.openui5.sap.ui.base
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
+/** Base class for all SAPUI5 Objects. */
 @JSName("sap.ui.base.Object")
 @js.native
 class Object extends js.Object {
