@@ -9,5 +9,8 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.base.EventProvider")
 @js.native
 class EventProvider extends Object {
-
+  def attachEvent(eventId: String,
+                  data: js.UndefOr[js.Dynamic],
+                  function: js.Function,
+                  listener: js.UndefOr[js.Dynamic]): EventProvider = js.native
 }

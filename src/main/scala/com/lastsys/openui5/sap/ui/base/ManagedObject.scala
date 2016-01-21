@@ -1,7 +1,19 @@
 package com.lastsys.openui5.sap.ui.base
 
+import com.lastsys.openui5.sap.ui.core.ID
+import com.lastsys.openui5.sap.ui.model.{Context, Model}
+
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+
+@ScalaJSDefined
+class ManagedObjectSettings extends js.Object {
+  var id: js.UndefOr[ID] = js.undefined
+  var models: js.UndefOr[js.Dictionary[Model]] = js.undefined
+  var bindingContexts: js.UndefOr[js.Dictionary[Context]] = js.undefined
+  var objectBindings: js.UndefOr[js.Dictionary[js.Dynamic]] = js.undefined
+}
+
 
 /** Base Class that introduces some basic concepts like state management or
   * databinding.

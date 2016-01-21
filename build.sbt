@@ -1,5 +1,10 @@
 lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+  enablePlugins(ScalaJSPlugin).
+  settings(
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "0.8.2"
+    )
+  )
 
 name := "Scala.js OpenUI5"
 
