@@ -19,7 +19,7 @@ class ManagedObjectSettings extends js.Object {
   * databinding.
   *
   * New subclasses of [[ManagedObject]] are created with a call to
-  * [[ManagedObject.extend]] and can make use of the following managed features:
+  * ManagedObject.extend and can make use of the following managed features:
   *
   * ==Properties==
   * Managed properties represent the state of a ManagedObject. They can store
@@ -154,5 +154,12 @@ class ManagedObject(id: String = js.native,
                     settings: js.Dynamic = js.native,
                     scope: js.Dynamic = js.native)
   extends EventProvider {
+  def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
+  def setModel(model: Model, name: js.UndefOr[String] = js.undefined): ManagedObject = js.native
+}
+
+@JSName("sap.ui.base.ManagedObject")
+@js.native
+object ManagedObject extends Object {
 
 }
