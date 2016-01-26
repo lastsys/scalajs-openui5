@@ -7,6 +7,8 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.core.Control")
 @js.native
 class Control extends Element {
+  def addStyleClass(styleClass: String): Control = js.native
+  def removeStyleClass(styleClass: String): Control = js.native
   def setBusy(busy: Boolean): Control = js.native
   def setVisible(visible: Boolean): Control = js.native
 }
