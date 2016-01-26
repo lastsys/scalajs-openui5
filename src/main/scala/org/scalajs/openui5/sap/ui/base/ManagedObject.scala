@@ -157,6 +157,7 @@ class ManagedObject(id: String = js.native,
   def setBindingContext(context: Context, modelName: js.UndefOr[String] = js.undefined): ManagedObject = js.native
   def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
   def setModel(model: Model, name: js.UndefOr[String] = js.undefined): ManagedObject = js.native
+  def getModel(name: js.UndefOr[String] = js.undefined): Model = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")
