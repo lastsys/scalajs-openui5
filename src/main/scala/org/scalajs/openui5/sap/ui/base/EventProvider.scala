@@ -32,9 +32,9 @@ class EventProvider extends Object {
     * @return Returns this to allow method chaining
     */
   def attachEvent(eventId: String,
-                  data: js.UndefOr[js.Dynamic],
+                  data: js.UndefOr[js.Dynamic] = js.undefined,
                   function: js.Function,
-                  listener: js.UndefOr[js.Dynamic]): EventProvider = js.native
+                  listener: js.UndefOr[js.Dynamic] = js.undefined): EventProvider = js.native
 
   /** Fires an event with the given settings and notifies all attached event handlers.
     *
