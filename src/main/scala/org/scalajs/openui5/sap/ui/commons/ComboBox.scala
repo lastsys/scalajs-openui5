@@ -8,5 +8,5 @@ import scala.scalajs.js.annotation.JSName
 class ComboBox(id: String = js.native,
                settings: js.Dynamic = js.native)
   extends TextField with ToolbarItem {
-
+  def bindItems(bindingInfo: js.Dynamic): ComboBox = js.native
 }
