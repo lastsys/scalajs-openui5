@@ -154,6 +154,7 @@ class ManagedObject(id: String = js.native,
                     settings: js.Dynamic = js.native,
                     scope: js.Dynamic = js.native)
   extends EventProvider {
+  def setBindingContext(context: Context, modelName: js.UndefOr[String] = js.undefined): ManagedObject = js.native
   def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
   def setModel(model: Model, name: js.UndefOr[String] = js.undefined): ManagedObject = js.native
 }
