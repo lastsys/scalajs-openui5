@@ -11,5 +11,5 @@ class ClientModel(data: js.UndefOr[js.Object] = js.undefined) extends Model {
     *
     * @return Data object.
     */
-  def getData(): js.Dynamic = js.native
+  def getData(): js.Object with js.Dynamic = js.native
 }
