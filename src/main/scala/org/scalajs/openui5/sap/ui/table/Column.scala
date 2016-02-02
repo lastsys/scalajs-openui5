@@ -45,10 +45,10 @@ class Column(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: js.Dynamic/*ColumnSettings*/) = this(js.undefined, settings)
 
-  def setHeaderSpan(headerSpan: Int = 1): Column = js.native
-  def setHeaderSpan(headerSpan: js.Array[Int]): Column = js.native
+  def setHeaderSpan(headerSpan: Int = 1): this.type = js.native
+  def setHeaderSpan(headerSpan: js.Array[Int]): this.type = js.native
 
-  def setVisible(visible: Boolean): Column = js.native
+  def setVisible(visible: Boolean): this.type = js.native
   def getVisible(): Boolean = js.native
 }
 

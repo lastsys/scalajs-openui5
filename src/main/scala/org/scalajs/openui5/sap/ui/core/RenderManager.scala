@@ -29,7 +29,7 @@ trait RenderManager extends Object {
     * @param name name of the class to be added; null values are ignored
     * @return this render manager instance to allow chaining
     */
-  def addClass(name: String): RenderManager = js.native
+  def addClass(name: String): this.type = js.native
 
   /** Adds a style property to the style collection if the value is not empty or null.
     *
@@ -40,7 +40,7 @@ trait RenderManager extends Object {
     * @param value
     * @return
     */
-  def addStyle(name: String, value: String): RenderManager = js.native
+  def addStyle(name: String, value: String): this.type = js.native
 
   /** Cleans up the rendering state of the given control with rendering it.
     *
@@ -93,6 +93,7 @@ trait RenderManager extends Object {
     * // If the instance is not needed anymore, destroy it
     * rm.destroy();
     * }}}
+    *
     * @param targetDomNode The node in the dom where the buffer should be flushed into.
     * @param doNotPreserve flag, whether to not preserve (true) the content or to preserve it (false).
     * @param insert flag, whether to append (true) or replace (false) the buffer of the target dom node or to insert at a certain position (int)
@@ -142,15 +143,14 @@ trait RenderManager extends Object {
     * @param text (can be a number too)
     * @return this render manager instance to allow chaining
     */
-  def write(text: String | Int): RenderManager = js.native
+  def write(text: String | Int): this.type = js.native
 
   /** Writes the attribute and its value into the HTML.
     *
     * @param name the name of the attribute
     * @param value the value of the attribute
     * @return this render manager instance to allow chaining
-    */
-  def writeAttribute(name: String, value: String | Int | Boolean): RenderManager = js.native
+    */ def writeAttribute(name: String, value: String | Int | Boolean): this.type = js.native
 
   /** Writes the attribute and its value into the HTML.
     *
@@ -160,7 +160,7 @@ trait RenderManager extends Object {
     * @param value the value of the attribute
     * @return this render manager instance to allow chaining
     */
-  def writeAttributeEscaped(name: String, value: js.Any): RenderManager = js.native
+  def writeAttributeEscaped(name: String, value: js.Any): this.type = js.native
 
   /** Writes and flushes the class collection.
     *
@@ -175,8 +175,7 @@ trait RenderManager extends Object {
     *                of adding from the control itself)
     * @return this render manager instance to allow chaining
     */
-  def writeClasses(element: js.UndefOr[Element | Boolean] = js.undefined): RenderManager = js.native
-
+  def writeClasses(element: js.UndefOr[Element | Boolean] = js.undefined): this.type = js.native
   /** Writes the controls data into the HTML.
     *
     * Control Data consists of at least the id of a control.
@@ -185,7 +184,7 @@ trait RenderManager extends Object {
     *                to the buffer
     * @return this render manager instance to allow chaining
     */
-  def writeControlData(control: Control): RenderManager = js.native
+  def writeControlData(control: Control): this.type = js.native
 
   /** Writes the elements data into the HTML.
     *
@@ -195,7 +194,7 @@ trait RenderManager extends Object {
     *                to the buffer
     * @return this render manager instance to allow chaining
     */
-  def writeElementData(element: Element): RenderManager
+  def writeElementData(element: Element): this.type = js.native
 
   /** Escape text for HTML and write it to the buffer.
     *
@@ -203,7 +202,7 @@ trait RenderManager extends Object {
     * @param lineBreaks whether to convert linebreaks into tags
     * @return this render manager instance to allow chaining
     */
-  def writeEscaped(text: String, lineBreaks: Boolean): RenderManager = js.native
+  def writeEscaped(text: String, lineBreaks: Boolean): this.type = js.native
 
   /** Writes necessary invisible control/element placeholder data into the HTML.
     *
@@ -226,11 +225,11 @@ trait RenderManager extends Object {
     * @param element an instance of [[Element]]
     * @return this render manager instance to allow chaining
     */
-  def writeInvisiblePlaceholderData(element: Element): RenderManager = js.native
+  def writeInvisiblePlaceholderData(element: Element): this.type = js.native
 
   /** Writes and flushes the style collection.
     *
     * @return this render manager instance to allow chaining
     */
-  def writeStyles(): RenderManager = js.native
+  def writeStyles(): this.type = js.native
 }

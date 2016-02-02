@@ -55,12 +55,12 @@ trait Menu extends Control {
     *
     * @return Reference to this in order to allow method chaining
     */
-  def destroyItems(): Menu = js.native
+  def destroyItems(): this.type = js.native
 
   /** Adds some item into the aggregation named items.
     *
     * @param item the item to add; if empty, nothing is inserted
     * @return Reference to this in order to allow method chaining
     */
-  def addItem(item: MenuItemBase): Menu = js.native
+  def addItem(item: MenuItemBase): this.type = js.native
 }

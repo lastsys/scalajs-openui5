@@ -31,7 +31,21 @@ class Element(id: String = js.native,
     *
     * @param tooltip tooltip to set
     */
-  def setTooltip(tooltip: String | TooltipBase): Unit = js.native
+  def setTooltip(tooltip: String | TooltipBase): this.type = js.native
+
+  /** Returns the tooltip for this element if any or an undefined value. The
+    * tooltip can either be a simple string or a subclass of
+    * sap.ui.core.TooltipBase.
+    *
+    * Callers that are only interested in tooltips of type string (e.g. to
+    * render them as a title attribute), should call the convenience method
+    * #getTooltip_AsString instead. If they want to get a tooltip text no
+    * matter where it comes from (be it a string tooltip or the text from a
+    * TooltipBase instance) then they could call #getTooltip_Text instead.
+    *
+    * @return tooltip for this [[Element]].
+    */
+  def getTooltip(): String /*| TooltipBase*/ = js.native
 
   /** Returns the best suitable DOM Element that represents this UI5 Element.
     * By default the DOM Element with the same ID as this Element is

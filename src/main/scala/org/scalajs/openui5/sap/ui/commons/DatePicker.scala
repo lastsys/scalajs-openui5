@@ -7,4 +7,5 @@ import scala.scalajs.js.annotation.JSName
 @js.native
 class DatePicker(id: String = js.native,
                  settings: js.Dynamic = js.native) extends TextField {
+  def getYyyymmdd(): String = js.native
 }

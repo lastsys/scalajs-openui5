@@ -24,5 +24,5 @@ class MenuButton extends Button {
     * @param menu Menu to set
     * @return this to allow method chaining
     */
-  def setMenu(menu: Menu): MenuButton = js.native
+  def setMenu(menu: Menu): this.type = js.native
 }

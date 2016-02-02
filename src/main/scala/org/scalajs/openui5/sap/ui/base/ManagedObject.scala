@@ -154,17 +154,17 @@ class ManagedObject(id: String = js.native,
                     settings: js.Dynamic = js.native,
                     scope: js.Dynamic = js.native)
   extends EventProvider {
-  def setBindingContext(context: Context, modelName: js.UndefOr[String] = js.undefined): ManagedObject = js.native
+  def setBindingContext(context: Context, modelName: js.UndefOr[String] = js.undefined): this.type = js.native
   def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
-  def setModel(model: Model, name: js.UndefOr[String] = js.undefined): ManagedObject = js.native
-  def getModel(name: js.UndefOr[String] = js.undefined): Model = js.native
+  def setModel(model: Model, name: js.UndefOr[String] = js.undefined): this.type = js.native
+  def getModel[T <: Model](name: js.UndefOr[String] = js.undefined): T = js.native
 
   /** Get the binding object for a specific aggregation/property.
     *
     * @param name name of property or aggregation
     * @return binding for given name
     */
-  def getBinding(name: String): Binding = js.native
+  def getBinding[T <: Binding](name: String): T = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")

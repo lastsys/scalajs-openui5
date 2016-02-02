@@ -18,5 +18,5 @@ object Object extends js.Object {
   @JSName("sap.ui.base.Object.extend")
   def extend(className: String,
              classInfo: js.UndefOr[js.Dynamic] = js.undefined,
-             metaImpl: js.UndefOr[js.Function] = js.undefined): Object = js.native
+             metaImpl: js.UndefOr[js.Function] = js.undefined): this.type = js.native
 }

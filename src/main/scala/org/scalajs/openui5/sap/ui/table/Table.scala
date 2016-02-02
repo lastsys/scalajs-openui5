@@ -33,7 +33,7 @@ trait Table extends Control {
     */
   def attachColumnVisibility(data: js.UndefOr[js.Dynamic] = js.undefined,
                              function: js.Function,
-                             listener: js.UndefOr[js.Dynamic] = js.undefined): Table = js.native
+                             listener: js.UndefOr[js.Dynamic] = js.undefined): this.type = js.native
 
   /** Sets a new value for property enableColumnFreeze.
     *
@@ -44,11 +44,10 @@ trait Table extends Control {
     * Default value is false.
     *
     * @since 1.21.0
-    *
     * @param enableColumnFreeze New value for property enableColumnFreeze
     * @return Reference to this in order to allow method chaining
     */
-  def setEnableColumnFreeze(enableColumnFreeze: Boolean): Table = js.native
+  def setEnableColumnFreeze(enableColumnFreeze: Boolean): this.type = js.native
 
   /** Sets a new value for property enableBusyIndicator.
     *
@@ -58,18 +57,17 @@ trait Table extends Control {
     * Default value is false.
     *
     * @since 1.27.0
-    *
     * @param enableBusyIndicator New value for property enableBusyIndicator
     * @return Reference to this in order to allow method chaining
     */
-  def setEnableBusyIndicator(enableBusyIndicator: Boolean): Table = js.native
+  def setEnableBusyIndicator(enableBusyIndicator: Boolean): this.type = js.native
 
   /** Adds some column into the aggregation named columns.
     *
     * @param column the column to add; to add; if empty, nothing is inserted
     * @return Reference to this in order to allow method chaining
     */
-  def addColumn(column: Column): Table = js.native
+  def addColumn(column: Column): this.type = js.native
 
   /** Binds aggregation rows to model data.
     *
@@ -79,7 +77,17 @@ trait Table extends Control {
     * @param bindingInfo The binding information or a path as a string
     * @return Reference to this in order to allow method chaining
     */
-  def bindRows(bindingInfo: String | js.Dynamic/*BindingInfo*/): Table = js.native
+  def bindRows(bindingInfo: String | js.Dynamic/*BindingInfo*/): this.type = js.native
+
+  /** Binds aggregation columns to model data.
+    *
+    * See ManagedObject.bindAggregation for a detailed description of the
+    * possible properties of oBindingInfo.
+    *
+    * @param bindingInfo The binding information.
+    * @return Reference to this in order to allow method chaining
+    */
+  def bindColumns(bindingInfo: js.Dynamic/*BindingInfo*/): this.type = js.native
 
   /** Gets current value of property firstVisibleRow.
     *
@@ -103,7 +111,7 @@ trait Table extends Control {
     * @param firstVisibleRow New value for property firstVisibleRow
     * @return Reference to this in order to allow method chaining
     */
-  def setFirstVisibleRow(firstVisibleRow: Int): Table = js.native
+  def setFirstVisibleRow(firstVisibleRow: Int): this.type = js.native
 
   /** Zero-based indices of selected items, wrapped in an array. An empty array
     * means "no selection".
@@ -111,4 +119,14 @@ trait Table extends Control {
     * @return Array of indices.
     */
   def getSelectedIndices(): js.Array[Int] = js.native
+
+  /** Gets current value of property visibleRowCount.
+    *
+    * Number of visible rows of the table.
+    *
+    * Default value is 10.
+    *
+    * @return Value of property visibleRowCount
+    */
+  def getVisibleRowCount(): Int = js.native
 }

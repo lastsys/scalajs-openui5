@@ -9,6 +9,6 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.model.Model")
 @js.native
 class Model extends MessageProcessor {
-  def setSizeLimit(sizeLimit: Int): Model = js.native
-  def refresh(forceUpdate: Boolean = false): Model = js.native
+  def setSizeLimit(sizeLimit: Int): this.type = js.native
+  def refresh(forceUpdate: Boolean = false): this.type = js.native
 }

@@ -14,7 +14,7 @@ class Splitter extends Control {
     *
     * @return Reference to this in order to allow method chaining
     */
-  def destroyFirstPaneContent(): Splitter = js.native
+  def destroyFirstPaneContent(): this.type = js.native
 
   /** Destroys all the secondPaneContent in the aggregation named
     * secondPaneContent.
@@ -27,11 +27,11 @@ class Splitter extends Control {
     *
     * @return Reference to this in order to allow method chaining
     */
-  def addFirstPaneContent(firstPaneContent: Control): Splitter = js.native
+  def addFirstPaneContent(firstPaneContent: Control): this.type = js.native
 
   /** Adds some secondPaneContent into the aggregation named secondPaneContent.
     *
     * @return Reference to this in order to allow method chaining
     */
-  def addSecondPaneContent(secondPaneContent: Control): Splitter = js.native
+  def addSecondPaneContent(secondPaneContent: Control): this.type = js.native
 }

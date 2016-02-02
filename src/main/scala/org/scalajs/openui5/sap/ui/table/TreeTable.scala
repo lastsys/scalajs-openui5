@@ -6,5 +6,5 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.table.TreeTable")
 @js.native
 trait TreeTable extends Table {
-  def expandToLevel(level: Int): TreeTable = js.native
+  def expandToLevel(level: Int): this.type = js.native
 }

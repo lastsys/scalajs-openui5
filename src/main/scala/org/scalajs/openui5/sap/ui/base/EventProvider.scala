@@ -34,7 +34,7 @@ class EventProvider extends Object {
   def attachEvent(eventId: String,
                   data: js.UndefOr[js.Dynamic] = js.undefined,
                   function: js.Function,
-                  listener: js.UndefOr[js.Dynamic] = js.undefined): EventProvider = js.native
+                  listener: js.UndefOr[js.Dynamic] = js.undefined): this.type = js.native
 
   /** Fires an event with the given settings and notifies all attached event handlers.
     *
@@ -55,5 +55,5 @@ class EventProvider extends Object {
   def fireEvent(eventId: String,
                 parameters: js.UndefOr[js.Dynamic] = js.undefined,
                 allowPreventDefault: js.UndefOr[Boolean] = js.undefined,
-                enableEventBubbling: js.UndefOr[Boolean] = js.undefined): EventProvider | Boolean = js.native
+                enableEventBubbling: js.UndefOr[Boolean] = js.undefined): this.type | Boolean = js.native
 }

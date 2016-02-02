@@ -22,5 +22,5 @@ class Button extends Control with ToolbarItem {
     * @param icon new value for property icon
     * @return reference to this in order to allow method chaining
     */
-  def setIcon(icon: String): Button = js.native
+  def setIcon(icon: String): this.type = js.native
 }
