@@ -4,4 +4,6 @@ package object core {
   type ID = String
   type CSSSize = String
   type HorizontalAlign = String
+  type Dock = String
+  type Collision = String
 }

@@ -1,5 +1,6 @@
 package org.scalajs.openui5.sap.ui.core
 
+import org.scalajs.dom
 import org.scalajs.openui5.sap.ui.base.{ManagedObject, ManagedObjectSettings}
 
 import scala.scalajs.js
@@ -31,4 +32,32 @@ class Element(id: String = js.native,
     * @param tooltip tooltip to set
     */
   def setTooltip(tooltip: String | TooltipBase): Unit = js.native
+
+  /** Returns the best suitable DOM Element that represents this UI5 Element.
+    * By default the DOM Element with the same ID as this Element is
+    * returned. Subclasses should override this method if the lookup via id
+    * is not sufficient.
+    *
+    * Note that such a DOM Element does not necessarily exist in all cases.
+    * Some elements or controls might not have a DOM representation at all
+    * (e.g. a naive FlowLayout) while others might not have one due to their
+    * current state (e.g. an initial, not yet rendered control).
+    *
+    * If an ID suffix is given, the ID of this Element is concatenated with the
+    * suffix (separated by a single dash) and the DOM node with that compound
+    * ID will be returned. This matches the UI5 naming convention for named
+    * inner DOM nodes of a control.
+    *
+    * @param suffix ID suffix to get the DOMRef for
+    * @return The Element's DOM Element, sub DOM element, or null
+    */
+  def getDomRef(suffix: js.UndefOr[String] = js.undefined): js.UndefOr[dom.Element] = js.native
+
+  /** Returns the DOM Element that should get the focus.
+    *
+    * To be overwritten by the specific control method.
+    *
+    * @return	Returns the DOM Element that should get the focus
+    */
+  def getFocusDomRef(): dom.Element = js.native
 }

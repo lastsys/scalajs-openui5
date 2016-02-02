@@ -6,7 +6,9 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.base.Event")
 @js.native
 class Event extends Object with Poolable {
+  def cancelBubble(): Unit = js.native
   def getParameter(name: String): js.Any = js.native
   def getParameters(): js.Object with js.Dynamic = js.native
   def getSource(): EventProvider = js.native
+  def preventDefault(): Unit = js.native
 }

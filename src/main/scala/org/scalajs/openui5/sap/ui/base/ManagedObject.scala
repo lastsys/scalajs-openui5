@@ -1,7 +1,7 @@
 package org.scalajs.openui5.sap.ui.base
 
 import org.scalajs.openui5.sap.ui.core.ID
-import org.scalajs.openui5.sap.ui.model.{Context, Model}
+import org.scalajs.openui5.sap.ui.model.{Binding, Context, Model}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
@@ -158,6 +158,13 @@ class ManagedObject(id: String = js.native,
   def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
   def setModel(model: Model, name: js.UndefOr[String] = js.undefined): ManagedObject = js.native
   def getModel(name: js.UndefOr[String] = js.undefined): Model = js.native
+
+  /** Get the binding object for a specific aggregation/property.
+    *
+    * @param name name of property or aggregation
+    * @return binding for given name
+    */
+  def getBinding(name: String): Binding = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")
