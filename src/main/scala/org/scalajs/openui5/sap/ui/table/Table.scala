@@ -129,4 +129,10 @@ trait Table extends Control {
     * @return Value of property visibleRowCount
     */
   def getVisibleRowCount(): Int = js.native
+
+  /** Removes complete selection.
+    *
+    * @return Reference to this in order to allow method chaining
+    */
+  def clearSelection(): this.type = js.native
 }
