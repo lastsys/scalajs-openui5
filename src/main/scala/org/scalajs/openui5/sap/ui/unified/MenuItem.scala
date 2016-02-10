@@ -11,6 +11,8 @@ import scala.scalajs.js.annotation.JSName
   */
 @JSName("sap.ui.unified.MenuItem")
 @js.native
-trait MenuItem extends MenuItemBase {
-
+class MenuItem(id: js.UndefOr[String] = js.native,
+               settings: js.UndefOr[js.Any] = js.native) extends MenuItemBase {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
 }

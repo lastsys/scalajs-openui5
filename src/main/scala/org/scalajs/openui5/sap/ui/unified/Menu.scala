@@ -17,7 +17,11 @@ import scala.scalajs.js.|
   */
 @JSName("sap.ui.unified.Menu")
 @js.native
-trait Menu extends Control {
+class Menu(id: js.UndefOr[String] = js.native,
+           settings: js.UndefOr[js.Any] = js.native) extends Control {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   /** Opens the menu at the specified position.
     *
     * The position of the menu is defined relative to an element in the visible
