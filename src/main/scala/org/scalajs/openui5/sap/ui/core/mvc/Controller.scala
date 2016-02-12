@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSName
 
 @JSName("sap.ui.core.mvc.Controller")
 @js.native
-trait Controller extends EventProvider {
+class Controller(name: String) extends EventProvider {
   def byId[T <: Element](id: String): T = js.native
   def createId(id: String): String = js.native
   def getOwnerComponent(): Component = js.native
