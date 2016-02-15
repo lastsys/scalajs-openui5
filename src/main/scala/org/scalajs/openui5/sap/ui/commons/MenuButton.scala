@@ -10,7 +10,11 @@ import scala.scalajs.js.annotation.JSName
   */
 @JSName("sap.ui.commons.MenuButton")
 @js.native
-class MenuButton extends Button {
+class MenuButton(id: js.UndefOr[String] = js.native,
+                 settings: js.UndefOr[js.Any] = js.native) extends Button {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   /** Gets content of aggregation menu.
     *
     * Menu that shall be opened when the button is clicked.

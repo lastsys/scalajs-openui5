@@ -12,3 +12,13 @@ class Control extends Element {
   def setBusy(busy: Boolean): this.type = js.native
   def setVisible(visible: Boolean): this.type = js.native
 }
+
+@JSName("sap.ui.core.Control")
+@js.native
+object Control extends Element {
+  def extend(className: String): js.Any = js.native
+  def extend(className: String, classInfo: js.Any): js.Any = js.native
+  def extend(className: String, metaImpl: js.Function): js.Any = js.native
+  def extend(className: String, classInfo: js.Any,
+             metaImpl: js.Function): js.Any = js.native
+}

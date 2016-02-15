@@ -8,7 +8,13 @@ import scala.scalajs.js.annotation.JSName
 
 @JSName("sap.ui.commons.Button")
 @js.native
-class Button extends Control with ToolbarItem {
+class Button(id: js.UndefOr[String] = js.native,
+             settings: js.UndefOr[js.Any] = js.native)
+  extends Control with ToolbarItem {
+
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   /** Sets a new value for property icon.
     *
     * Icon to be displayed as graphical element within the button. This can be
