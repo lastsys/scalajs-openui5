@@ -6,4 +6,5 @@ package object core {
   type HorizontalAlign = String
   type Dock = String
   type Collision = String
+  type MessageType = String
 }

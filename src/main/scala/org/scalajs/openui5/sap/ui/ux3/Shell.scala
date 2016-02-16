@@ -41,6 +41,14 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @return
     */
   def setPaneContent(content: Control,
-                     destroyOldContent: Boolean = false): js.Array[Control] =
-    js.native
+                     destroyOldContent: Boolean = false): js.Array[Control] = js.native
+
+  /** Gets content of aggregation notificationBar.
+    *
+    * The [[NotificationBar]] which should be integrated into the [[Shell]].
+    *
+    * @since 1.7.0
+    * @return notification bar
+    */
+  def getNotificationBar(): NotificationBar = js.native
 }
