@@ -165,6 +165,12 @@ class ManagedObject(id: String = js.native,
     * @return binding for given name
     */
   def getBinding[T <: Binding](name: String): T = js.native
+
+  /** Returns the object's Id.
+    *
+    * @return the object's Id
+    */
+  def getId(): String = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")
