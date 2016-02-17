@@ -29,4 +29,11 @@ class Button(id: js.UndefOr[String] = js.native,
     * @return reference to this in order to allow method chaining
     */
   def setIcon(icon: String): this.type = js.native
+
+  def attachPress(data: js.Any, function: js.Function,
+                  listener: js.Any): Button = js.native
+  def attachPress(data: js.Any, function: js.Function): Button = js.native
+  def attachPress(function: js.Function,
+                  listener: js.Any): Button = js.native
+  def attachPress(function: js.Function): Button = js.native
 }

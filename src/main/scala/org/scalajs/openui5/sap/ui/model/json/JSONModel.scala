@@ -8,7 +8,7 @@ import scala.scalajs.js.|
 
 @JSName("sap.ui.model.json.JSONModel")
 @js.native
-class JSONModel(data: js.UndefOr[js.Object] = js.undefined) extends ClientModel {
+class JSONModel(data: js.UndefOr[js.Any] = js.undefined) extends ClientModel {
   def setData(data: js.Any,
               merge: Boolean = false): this.type = js.native
   def loadData[T <: js.Object](url: String,
