@@ -9,6 +9,8 @@ import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
 import SettingsBuilder.builder2Settings
 
+import scala.scalajs.js.|
+
 @ScalaJSDefined
 trait ButtonSettings extends ControlSettings
 object ButtonSettings extends ButtonSettingsBuilder[ButtonSettings]
