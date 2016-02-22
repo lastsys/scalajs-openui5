@@ -6,9 +6,12 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.core.HorizontalAlign")
 @js.native
 object HorizontalAlign extends js.Object {
-  val Begin: String = js.native
-  val Center: String = js.native
-  val End: String = js.native
-  val Left: String = js.native
-  val Right: String = js.native
+  // Must use String for now due to
+  // https://issues.scala-lang.org/browse/SI-9668
+  val Begin: String /*HorizontalAlign*/ = js.native
+  val Center: String /*HorizontalAlign*/ = js.native
+  val End: String /*HorizontalAlign*/ = js.native
+  val Left: String /*HorizontalAlign*/ = js.native
+  val Right: String /*HorizontalAlign*/ = js.native
 }
+

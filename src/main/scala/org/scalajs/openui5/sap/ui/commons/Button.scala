@@ -57,9 +57,11 @@ class Button(id: js.UndefOr[String] = js.native,
   def setIcon(icon: String): this.type = js.native
 
   def attachPress(data: js.Any, function: js.Function,
-                  listener: js.Any): Button = js.native
-  def attachPress(data: js.Any, function: js.Function): Button = js.native
+                  listener: js.Any): this.type = js.native
+  def attachPress(data: js.Any, function: js.Function): this.type = js.native
   def attachPress(function: js.Function,
-                  listener: js.Any): Button = js.native
-  def attachPress(function: js.Function): Button = js.native
+                  listener: js.Any): this.type = js.native
+  def attachPress(function: js.Function): this.type = js.native
+
+  def setEnabled(enabled: Boolean): this.type = js.native
 }

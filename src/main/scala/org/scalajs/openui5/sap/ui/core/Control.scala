@@ -24,7 +24,13 @@ class ControlSettingsBuilder[T <: js.Object] extends
 /** Base Class for Controls. */
 @JSName("sap.ui.core.Control")
 @js.native
-class Control extends Element {
+class Control(id: js.UndefOr[String] = js.native,
+              settings: js.UndefOr[ControlSettings] = js.native)
+  extends Element {
+
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: ControlSettings) = this(js.undefined, settings)
+
   def addStyleClass(styleClass: String): this.type = js.native
   def removeStyleClass(styleClass: String): this.type = js.native
   def setBusy(busy: Boolean): this.type = js.native
