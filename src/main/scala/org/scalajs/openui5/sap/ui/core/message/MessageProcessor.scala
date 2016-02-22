@@ -7,6 +7,4 @@ import scala.scalajs.js.annotation.JSName
 
 @JSName("sap.ui.core.message.MessageProcessor")
 @js.native
-trait MessageProcessor extends EventProvider {
-
-}
+trait MessageProcessor extends EventProvider
