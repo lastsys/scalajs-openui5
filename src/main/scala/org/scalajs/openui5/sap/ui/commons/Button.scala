@@ -3,8 +3,12 @@ package org.scalajs.openui5.sap.ui.commons
 import org.scalajs.openui5.sap.ui.base.Event
 import org.scalajs.openui5.sap.ui.core._
 
+
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+
+
+import scala.scalajs.js.|
 
 @ScalaJSDefined
 trait ButtonSettings extends ControlSettings
