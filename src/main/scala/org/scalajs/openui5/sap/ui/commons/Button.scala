@@ -6,15 +6,37 @@ import org.scalajs.openui5.sap.ui.core._
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
+@ScalaJSDefined
+trait ButtonSettings extends ControlSettings
+object ButtonSettings extends ButtonSettingsBuilder[ButtonSettings]
+class ButtonSettingsBuilder[T <: js.Object] extends
+  ControlSettingsBuilder[T] {
+  def text(v: String) = setting("text", v)
+  def enabled(v: Boolean) = setting("enabled", v)
+  def width(v: CSSSize) = setting("width", v)
+  def helpId(v: String) = setting("helpId", v)
+  def icon(v: URI) = setting("icon", v)
+  def iconHovered(v: URI) = setting("iconHovered", v)
+  def iconSelected(v: URI) = setting("iconSelected", v)
+  def iconFirst(v: Boolean) = setting("iconFirst", v)
+  def height(v: CSSSize) = setting("height", v)
+  def styled(v: Boolean) = setting("styled", v)
+  def lite(v: Boolean) = setting("lite", v)
+  def style(v: ButtonStyle) = setting("style", v)
+
+  def press(v: (Event) ⇒ Unit) = setting("press", v)
+  def press(v: js.Function) = setting("press", v)
+}
+
 
 @JSName("sap.ui.commons.Button")
 @js.native
 class Button(id: js.UndefOr[String] = js.native,
-            settings: js.UndefOr[js.Any] = js.native)
+             settings: js.UndefOr[ButtonSettings] = js.native)
   extends Control with ToolbarItem {
 
   def this(id: String) = this(id, js.undefined)
-  def this(settings: js.Any) = this(js.undefined, settings)
+  def this(settings: ButtonSettings) = this(js.undefined, settings)
 
   /** Sets a new value for property icon.
     *

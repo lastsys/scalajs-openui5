@@ -2,18 +2,20 @@ package org.scalajs.openui5.sap.ui.base
 
 import org.scalajs.openui5.sap.ui.core.ID
 import org.scalajs.openui5.sap.ui.model.{Binding, Context, Model}
+import org.scalajs.openui5.util.SettingsBuilder
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
 @ScalaJSDefined
-class ManagedObjectSettings extends js.Object {
-  var id: js.UndefOr[ID] = js.undefined
-  var models: js.UndefOr[js.Dictionary[Model]] = js.undefined
-  var bindingContexts: js.UndefOr[js.Dictionary[Context]] = js.undefined
-  var objectBindings: js.UndefOr[js.Dictionary[js.Dynamic]] = js.undefined
+trait ManagedObjectSettings extends js.Object
+object ManagedObjectSettings extends ManagedObjectSettingsBuilder[ManagedObjectSettings]
+class ManagedObjectSettingsBuilder[T <: js.Object] extends SettingsBuilder[T] {
+  def id(v: ID) = setting("id", v)
+  def models(v: js.Dictionary[Model]) = setting("models", v)
+  def bindingContexts(v: js.Dictionary[Context]) = setting("bindingContexts", v)
+  def objectBindings(v: js.Dictionary[js.Any]) = setting("objectBindings", v)
 }
-
 
 /** Base Class that introduces some basic concepts like state management or
   * databinding.
@@ -150,10 +152,18 @@ class ManagedObjectSettings extends js.Object {
   */
 @JSName("sap.ui.base.ManagedObject")
 @js.native
-class ManagedObject(id: String = js.native,
-                    settings: js.Dynamic = js.native,
-                    scope: js.Dynamic = js.native)
+class ManagedObject(id: js.UndefOr[String] = js.native,
+                    settings: js.UndefOr[ManagedObjectSettings] = js.native,
+                    scope: js.UndefOr[js.Any] = js.native)
   extends EventProvider {
+
+  def this(id: String) = this(id, js.undefined, js.undefined)
+  def this(settings: ManagedObjectSettings) = this(js.undefined, settings, js.undefined)
+  def this(scope: js.Any) = this(js.undefined, js.undefined, scope)
+  def this(id: String, settings: ManagedObjectSettings) = this(id, settings, js.undefined)
+  def this(id: String, scope: js.Any) = this(id, js.undefined, scope)
+  def this(settings: ManagedObjectSettings, scope: js.Any) = this(js.undefined, settings, scope)
+
   def setBindingContext(context: Context, modelName: js.UndefOr[String] = js.undefined): this.type = js.native
   def getBindingContext(modelName: js.UndefOr[String] = js.undefined): Context = js.native
   def setModel(model: Model, name: js.UndefOr[String] = js.undefined): this.type = js.native

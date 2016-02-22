@@ -11,4 +11,5 @@ package object core {
   type Collision = String
   type MessageType = String
   type URI = String
+  type AccessibleRole = String
 }

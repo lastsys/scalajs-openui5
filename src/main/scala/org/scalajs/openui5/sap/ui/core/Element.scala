@@ -1,26 +1,34 @@
 package org.scalajs.openui5.sap.ui.core
 
 import org.scalajs.dom
-import org.scalajs.openui5.sap.ui.base.{ManagedObject, ManagedObjectSettings}
+import org.scalajs.openui5.sap.ui.base.{ManagedObjectSettingsBuilder, ManagedObject, ManagedObjectSettings}
+import org.scalajs.openui5.util.SettingsBuilder
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
 
-
 @ScalaJSDefined
-class ElementSettings extends ManagedObjectSettings {
-  var tooltip: js.UndefOr[TooltipBase] = js.undefined
-  var customData: js.UndefOr[js.Array[CustomData]] = js.undefined
-  var layoutData: js.UndefOr[LayoutData] = js.undefined
-  var dependents: js.UndefOr[js.Array[Control]] = js.undefined
+trait ElementSettings extends js.Object
+object ElementSettings extends ElementSettingsBuilder[ElementSettings]
+class ElementSettingsBuilder[T <: js.Object] extends
+  ManagedObjectSettingsBuilder[T] {
+  def tooltip(v: TooltipBase) = setting("tooltip", v)
+  def customData(v: js.Array[CustomData]) = setting("customData", v)
+  def layoutData(v: LayoutData) = setting("layoutData", v)
+  def dependents(v: js.Array[Control]) = setting("dependents", v)
 }
 
 /** Base Class for Elements. */
 @JSName("sap.ui.core.Element")
 @js.native
-class Element(id: String = js.native,
-              settings: js.Dynamic = js.native) extends ManagedObject {
+class Element(id: js.UndefOr[String] = js.native,
+              settings: js.UndefOr[ElementSettings] = js.native)
+  extends ManagedObject {
+
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: ElementSettings) = this(js.undefined, settings)
+
   /** Sets a new tooltip for this object.
     *
     * The tooltip can either be a simple string (which in most cases will be

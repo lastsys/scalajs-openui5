@@ -6,15 +6,28 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
 
+@ScalaJSDefined
+trait ControlSettings extends ElementSettings
+object ControlSettings extends ControlSettingsBuilder[ControlSettings]
+class ControlSettingsBuilder[T <: js.Object] extends
+  ElementSettingsBuilder[T] {
+  def busy(v: Boolean) = setting("busy", v)
+  def busyIndicatorDelay(v: Int) = setting("busyIndicatorDelay", v)
+  def visible(v: Boolean) = setting("visible", v)
+  def fieldGroupIds(v: js.Array[String]) = setting("fieldGroupIds", v)
+
+  def validateFieldGroup(v: (Event) ⇒ Unit) = setting("validateFieldGroup", v)
+}
+
 /** Base Class for Controls. */
 @JSName("sap.ui.core.Control")
 @js.native
 class Control(id: js.UndefOr[String] = js.native,
-              settings: js.UndefOr[js.Any] = js.native)
+              settings: js.UndefOr[ControlSettings] = js.native)
   extends Element {
 
   def this(id: String) = this(id, js.undefined)
-  def this(settings: js.Any) = this(js.undefined, settings)
+  def this(settings: ControlSettings) = this(js.undefined, settings)
 
   def addStyleClass(styleClass: String): this.type = js.native
   def removeStyleClass(styleClass: String): this.type = js.native
