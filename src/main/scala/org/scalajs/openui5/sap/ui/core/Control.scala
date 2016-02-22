@@ -1,8 +1,25 @@
 package org.scalajs.openui5.sap.ui.core
 
+import org.scalajs.openui5.sap.ui.base.Event
+import org.scalajs.openui5.util.SettingsBuilder
+import org.scalajs.openui5.util.SettingsBuilder.builder2Settings
+
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
+
+@ScalaJSDefined
+trait ControlSettings extends ElementSettings
+object ControlSettings extends ControlSettingsBuilder[ControlSettings]
+class ControlSettingsBuilder[T <: js.Object] extends
+  ElementSettingsBuilder[T] {
+  def busy(v: Boolean) = setting("busy", v)
+  def busyIndicatorDelay(v: Int) = setting("busyIndicatorDelay", v)
+  def visible(v: Boolean) = setting("visible", v)
+  def fieldGroupIds(v: js.Array[String]) = setting("fieldGroupIds", v)
+
+  def validateFieldGroup(v: (Event) ⇒ Unit) = setting("validateFieldGroup", v)
+}
 
 /** Base Class for Controls. */
 @JSName("sap.ui.core.Control")

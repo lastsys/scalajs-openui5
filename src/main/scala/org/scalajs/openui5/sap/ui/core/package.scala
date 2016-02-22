@@ -7,4 +7,6 @@ package object core {
   type Dock = String
   type Collision = String
   type MessageType = String
+  type URI = String
+  type AccessibleRole = String
 }
