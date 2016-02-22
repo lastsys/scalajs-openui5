@@ -1,13 +1,21 @@
 package org.scalajs.openui5.sap.ui.core
 
+import org.scalajs.openui5.sap.ui.base.Event
+
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
 
 /** Base Class for Controls. */
 @JSName("sap.ui.core.Control")
 @js.native
-class Control extends Element {
+class Control(id: js.UndefOr[String] = js.native,
+              settings: js.UndefOr[js.Any] = js.native)
+  extends Element {
+
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   def addStyleClass(styleClass: String): this.type = js.native
   def removeStyleClass(styleClass: String): this.type = js.native
   def setBusy(busy: Boolean): this.type = js.native

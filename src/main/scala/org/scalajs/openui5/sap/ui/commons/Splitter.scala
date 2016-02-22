@@ -8,7 +8,11 @@ import scala.scalajs.js.annotation.JSName
 
 @JSName("sap.ui.commons.Splitter")
 @js.native
-class Splitter extends Control {
+class Splitter(id: js.UndefOr[String] = js.native,
+               settings: js.UndefOr[js.Any] = js.native) extends Control {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   /** Destroys all the firstPaneContent in the aggregation named
     * firstPaneContent.
     *

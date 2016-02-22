@@ -9,7 +9,11 @@ import scala.scalajs.js.annotation.JSName
 
 @JSName("sap.ui.commons.Tree")
 @js.native
-class Tree extends Control {
+class Tree(id: js.UndefOr[String] = js.native,
+           settings: js.UndefOr[js.Any] = js.native) extends Control {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: js.Any) = this(js.undefined, settings)
+
   def bindNodes(bindingInfo: js.Dynamic): this.type = js.native
   def getSelectedIndices(): js.Array[Int] = js.native
   def getContextByIndex(index: Int): Context = js.native
