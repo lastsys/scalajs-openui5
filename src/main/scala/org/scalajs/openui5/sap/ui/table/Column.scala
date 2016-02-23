@@ -5,6 +5,7 @@ import org.scalajs.openui5.sap.ui.unified.Menu
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.|
 
 
 @ScalaJSDefined
@@ -33,7 +34,7 @@ class ColumnSettingsBuilder[T <: js.Object] extends
   def autoResizable(v: Boolean) = setting("autoResizable", v)
   def defaultFilterOperator(v: String) = setting("defaultFilterOperator", v)
 
-  def label(v: Control) = setting("label", v)
+  def label(v: String|Control) = setting("label", v)
   def multiLabels(v: js.Array[Control]) = setting("multiLabels", v)
   def template(v: Control) = setting("template", v)
   def menu(v: Menu) = setting("menu", v)
