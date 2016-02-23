@@ -13,7 +13,7 @@ trait ElementSettings extends js.Object
 object ElementSettings extends ElementSettingsBuilder[ElementSettings]
 class ElementSettingsBuilder[T <: js.Object] extends
   ManagedObjectSettingsBuilder[T] {
-  def tooltip(v: TooltipBase) = setting("tooltip", v)
+  def tooltip(v: String|TooltipBase) = setting("tooltip", v)
   def customData(v: js.Array[CustomData]) = setting("customData", v)
   def layoutData(v: LayoutData) = setting("layoutData", v)
   def dependents(v: js.Array[Control]) = setting("dependents", v)
