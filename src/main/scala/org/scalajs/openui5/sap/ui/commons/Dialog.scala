@@ -3,14 +3,22 @@ package org.scalajs.openui5.sap.ui.commons
 import org.scalajs.openui5.sap.ui.base.Event
 import org.scalajs.openui5.sap.ui.commons.enums.BorderDesign
 import org.scalajs.openui5.sap.ui.core._
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
 @ScalaJSDefined
 trait DialogSettings extends ControlSettings
-object DialogSettings extends DialogSettingsBuilder[DialogSettings]
-class DialogSettingsBuilder[T <: js.Object] extends ControlSettingsBuilder[T] {
+object DialogSettings extends DialogSettingsBuilder(noSettings)
+
+class DialogSettingsBuilder(val dict: SettingsMap)
+  extends Settings[DialogSettings, DialogSettingsBuilder](new DialogSettingsBuilder(_))
+    with DialogSetters[DialogSettings, DialogSettingsBuilder]
+
+trait DialogSetters[T <: js.Object, B <: Settings[T, _]]
+  extends ControlSetters[T, B] {
+
   def width(v: CSSSize) = setting("width", v)
   def height(v: CSSSize) = setting("height", v)
   def scrollLeft(v: Int) = setting("scrollLeft", v)

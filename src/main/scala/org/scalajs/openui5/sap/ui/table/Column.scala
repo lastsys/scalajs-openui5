@@ -2,6 +2,7 @@ package org.scalajs.openui5.sap.ui.table
 
 import org.scalajs.openui5.sap.ui.core._
 import org.scalajs.openui5.sap.ui.unified.Menu
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
@@ -10,9 +11,15 @@ import scala.scalajs.js.|
 
 @ScalaJSDefined
 trait ColumnSettings extends ElementSettings
-object ColumnSettings extends ColumnSettingsBuilder[ColumnSettings]
-class ColumnSettingsBuilder[T <: js.Object] extends
-  ElementSettingsBuilder[T] {
+object ColumnSettings extends ColumnSettingsBuilder(noSettings)
+
+class ColumnSettingsBuilder(val dict: SettingsMap)
+  extends Settings[ColumnSettings, ColumnSettingsBuilder](new ColumnSettingsBuilder(_))
+    with ColumnSetters[ColumnSettings, ColumnSettingsBuilder]
+
+trait ColumnSetters[T <: js.Object, B <: Settings[T,_]]
+  extends ElementSetters[T, B] {
+
   def width(v: CSSSize) = setting("width", v)
   def flexible(v: Boolean) = setting("flexible", v)
   def resizable(v: Boolean) = setting("resizable", v)

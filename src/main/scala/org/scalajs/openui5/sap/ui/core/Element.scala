@@ -1,18 +1,23 @@
 package org.scalajs.openui5.sap.ui.core
 
 import org.scalajs.dom
-import org.scalajs.openui5.sap.ui.base.{ManagedObjectSettingsBuilder, ManagedObject, ManagedObjectSettings}
-import org.scalajs.openui5.util.SettingsBuilder
+import org.scalajs.openui5.sap.ui.base.{ManagedObject, ManagedObjectSetters, ManagedObjectSettings}
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 import scala.scalajs.js.|
 
 @ScalaJSDefined
 trait ElementSettings extends ManagedObjectSettings
-object ElementSettings extends ElementSettingsBuilder[ElementSettings]
-class ElementSettingsBuilder[T <: js.Object] extends
-  ManagedObjectSettingsBuilder[T] {
+object ElementSettings extends ElementSettingsBuilder(noSettings)
+
+class ElementSettingsBuilder(val dict: SettingsMap)
+  extends Settings[ElementSettings, ElementSettingsBuilder](new ElementSettingsBuilder(_))
+    with ElementSetters[ElementSettings, ElementSettingsBuilder]
+
+trait ElementSetters[T <: js.Object, B <: Settings[T,_]] extends
+  ManagedObjectSetters[T, B] {
   def tooltip(v: String|TooltipBase) = setting("tooltip", v)
   def customData(v: js.Array[CustomData]) = setting("customData", v)
   def layoutData(v: LayoutData) = setting("layoutData", v)

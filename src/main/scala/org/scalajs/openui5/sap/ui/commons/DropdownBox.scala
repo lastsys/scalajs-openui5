@@ -1,16 +1,22 @@
 package org.scalajs.openui5.sap.ui.commons
 
-import org.scalajs.openui5.sap.ui.core.{URI, ControlSettingsBuilder, ControlSettings}
+import org.scalajs.openui5.sap.ui.core.URI
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 
 @ScalaJSDefined
 trait DropdownBoxSettings extends ComboBoxSettings
-object DropdownBoxSettings extends
-  DropdownBoxSettingsBuilder[DropdownBoxSettings]
-class DropdownBoxSettingsBuilder[T <: js.Object] extends
-  ComboBoxSettingsBuilder[T] {
+object DropdownBoxSettings extends DropdownBoxSettingsBuilder(noSettings)
+
+class DropdownBoxSettingsBuilder(val dict: SettingsMap)
+  extends Settings[DropdownBoxSettings, DropdownBoxSettingsBuilder](new DropdownBoxSettingsBuilder(_))
+    with DropdownBoxSetters[DropdownBoxSettings, DropdownBoxSettingsBuilder]
+
+trait DropdownBoxSetters[T <: js.Object, B <: Settings[T,_]]
+  extends ComboBoxSetters[T, B] {
+
   def searchHelpEnabled(v: Boolean) = setting("searchHelpEnabled", v)
   def searchHelpText(v: String) = setting("searchHelpText", v)
   def searchHelpAdditionalText(v: String) = setting("searchHelpAdditionalText", v)

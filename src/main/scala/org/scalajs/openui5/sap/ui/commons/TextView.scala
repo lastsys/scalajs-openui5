@@ -1,15 +1,22 @@
 package org.scalajs.openui5.sap.ui.commons
 
 import org.scalajs.openui5.sap.ui.core._
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
 @ScalaJSDefined
 trait TextViewSettings extends ControlSettings
-object TextViewSettings extends TextViewSettingsBuilder[TextViewSettings]
-class TextViewSettingsBuilder[T <: js.Object] extends
-  ControlSettingsBuilder[T] {
+object TextViewSettings extends TextViewSettingsBuilder(noSettings)
+
+class TextViewSettingsBuilder(val dict: SettingsMap)
+  extends Settings[TextViewSettings, TextViewSettingsBuilder](new TextViewSettingsBuilder(_))
+    with TextViewSetters[TextViewSettings, TextViewSettingsBuilder]
+
+trait TextViewSetters[T <: js.Object, B <: Settings[T,_]]
+  extends ControlSetters[T, B] {
+
   def text(v: String) = setting("text", v)
   def textDirection(v: TextDirection) = setting("textDirection", v)
   def enabled(v: Boolean) = setting("enabled", v)

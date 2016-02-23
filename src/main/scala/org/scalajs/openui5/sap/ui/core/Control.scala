@@ -1,6 +1,7 @@
 package org.scalajs.openui5.sap.ui.core
 
 import org.scalajs.openui5.sap.ui.base.Event
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
@@ -8,9 +9,13 @@ import scala.scalajs.js.|
 
 @ScalaJSDefined
 trait ControlSettings extends ElementSettings
-object ControlSettings extends ControlSettingsBuilder[ControlSettings]
-class ControlSettingsBuilder[T <: js.Object] extends
-  ElementSettingsBuilder[T] {
+object ControlSettings extends ControlSettingsBuilder(noSettings)
+
+class ControlSettingsBuilder(val dict: SettingsMap)
+  extends Settings[ControlSettings, ControlSettingsBuilder](new ControlSettingsBuilder(_))
+    with ControlSetters[ControlSettings, ControlSettingsBuilder]
+
+trait ControlSetters[T <: js.Object, B <: Settings[T, _]] extends ElementSetters[T, B] {
   def busy(v: Boolean) = setting("busy", v)
   def busyIndicatorDelay(v: Int) = setting("busyIndicatorDelay", v)
   def visible(v: Boolean) = setting("visible", v)

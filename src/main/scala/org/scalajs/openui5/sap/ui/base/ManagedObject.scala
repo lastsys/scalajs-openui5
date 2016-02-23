@@ -2,15 +2,22 @@ package org.scalajs.openui5.sap.ui.base
 
 import org.scalajs.openui5.sap.ui.core.ID
 import org.scalajs.openui5.sap.ui.model.{Binding, Context, Model}
-import org.scalajs.openui5.util.SettingsBuilder
+import org.scalajs.openui5.util._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 
 @ScalaJSDefined
 trait ManagedObjectSettings extends js.Object
-object ManagedObjectSettings extends ManagedObjectSettingsBuilder[ManagedObjectSettings]
-class ManagedObjectSettingsBuilder[T <: js.Object] extends SettingsBuilder[T] {
+object ManagedObjectSettings extends ManagedObjectSettingsBuilder(noSettings)
+
+class ManagedObjectSettingsBuilder(val dict: SettingsMap)
+  extends Settings[ManagedObjectSettings, ManagedObjectSettingsBuilder](new ManagedObjectSettingsBuilder(_))
+    with ManagedObjectSetters[ManagedObjectSettings, ManagedObjectSettingsBuilder]
+
+trait ManagedObjectSetters[T <: js.Object, B <: Settings[T,_]]
+  extends SettingsSetter[T, B] {
+
   def id(v: ID) = setting("id", v)
   def models(v: js.Dictionary[Model]) = setting("models", v)
   def bindingContexts(v: js.Dictionary[Context]) = setting("bindingContexts", v)

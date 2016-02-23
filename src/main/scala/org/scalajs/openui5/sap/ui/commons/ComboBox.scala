@@ -1,14 +1,22 @@
 package org.scalajs.openui5.sap.ui.commons
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import org.scalajs.openui5.sap.ui.core.ListItem
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
+
+import scala.scalajs.js
+import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 
 @ScalaJSDefined
 trait ComboBoxSettings extends TextFieldSettings
-object ComboBoxSettings extends ComboBoxSettingsBuilder[ComboBoxSettings]
-class ComboBoxSettingsBuilder[T <: js.Object] extends
-  TextFieldSettingsBuilder[T] {
+object ComboBoxSettings extends ComboBoxSettingsBuilder(noSettings)
+
+class ComboBoxSettingsBuilder(val dict: SettingsMap)
+  extends Settings[ComboBoxSettings, ComboBoxSettingsBuilder](new ComboBoxSettingsBuilder(_))
+    with ComboBoxSetters[ComboBoxSettings, ComboBoxSettingsBuilder]
+
+trait ComboBoxSetters[T <: js.Object, B <: Settings[T, _]]
+  extends TextFieldSetters[T, B] {
+
   def maxPopupItems(v: Int) = setting("maxPopupItems", v)
   def displaySecondaryValues(v: Boolean) = setting("displaySecondaryValues", v)
   def selectedKey(v: String) = setting("selectedKey", v)
