@@ -9,4 +9,6 @@ package object core {
   type MessageType = String
   type URI = String
   type AccessibleRole = String
+  type TextDirection = String
+  type TextAlign = String
 }
