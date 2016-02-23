@@ -11,4 +11,7 @@ package object core {
   type AccessibleRole = String
   type TextDirection = String
   type TextAlign = String
+  type ValueState = String
+  type ImeMode = String
+  type Design = String
 }

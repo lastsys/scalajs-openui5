@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
 
 @ScalaJSDefined
-trait ElementSettings extends js.Object
+trait ElementSettings extends ManagedObjectSettings
 object ElementSettings extends ElementSettingsBuilder[ElementSettings]
 class ElementSettingsBuilder[T <: js.Object] extends
   ManagedObjectSettingsBuilder[T] {

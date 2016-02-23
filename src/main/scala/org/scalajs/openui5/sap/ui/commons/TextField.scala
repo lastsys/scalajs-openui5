@@ -1,14 +1,42 @@
 package org.scalajs.openui5.sap.ui.commons
 
-import org.scalajs.openui5.sap.ui.core.Control
+import org.scalajs.openui5.sap.ui.core._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 
+@ScalaJSDefined
+trait TextFieldSettings extends ControlSettings
+object TextFieldSettings extends ControlSettingsBuilder[ControlSettings]
+class TextFieldSettingsBuilder[T <: js.Object] extends
+  ControlSettingsBuilder[T] {
+  def value(v: String) = setting("value", v)
+  def textDirection(v: TextDirection) = setting("textDirection", v)
+  def enabled(v: Boolean) = setting("enabled", v)
+  def editable(v: Boolean) = setting("editable", v)
+  def required(v: Boolean) = setting("required", v)
+  def width(v: CSSSize) = setting("width", v)
+  def maxLength(v: Int) = setting("maxLength", v)
+  def valueState(v: ValueState) = setting("valueState", v)
+  def textAlign(v: TextAlign) = setting("textAlign", v)
+  def imeMode(v: ImeMode) = setting("imeMode", v)
+  def design(v: Design) = setting("design", v)
+  def helpId(v: String) = setting("helpId", v)
+  def accessibleRole(v: AccessibleRole) = setting("accessibleRole", v)
+  def name(v: String) = setting("name", v)
+  def placeholder(v: String) = setting("placeholder", v)
+
+  def change(v: js.Function) = setting("change", v)
+  def liveChange(v: js.Function) = setting("liveChange", v)
+}
 
 @JSName("sap.ui.commons.TextField")
 @js.native
-class TextField extends Control {
+class TextField(id: js.UndefOr[String] = js.native,
+                settings: js.UndefOr[TextFieldSettings] = js.native) extends Control {
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: TextFieldSettings) = this(js.undefined, settings)
+
   /** Gets current value of property value.
     *
     * Text inside the TextField.
