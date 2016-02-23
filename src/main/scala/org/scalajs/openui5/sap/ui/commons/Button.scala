@@ -40,12 +40,11 @@ trait ButtonSetters[T <: js.Object, B <: Settings[T,_]] extends ControlSetters[T
 @JSName("sap.ui.commons.Button")
 @js.native
 class Button(id: js.UndefOr[String] = js.native,
-             settings: js.UndefOr[ButtonSettings|js.Any] = js.native)
+             settings: js.UndefOr[ButtonSettings] = js.native)
   extends Control with ToolbarItem {
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: ButtonSettings) = this(js.undefined, settings)
-  def this(settings: js.Any) = this(js.undefined, settings)
 
   /** Sets a new value for property icon.
     *

@@ -31,9 +31,9 @@ trait ToolbarSetters[T <: js.Object, B <: Settings[T,_]]
 @JSName("sap.ui.commons.Toolbar")
 @js.native
 class Toolbar(id: js.UndefOr[String] = js.native,
-              settings: js.UndefOr[ToolbarSettings|js.Any])
+              settings: js.UndefOr[ToolbarSettings])
   extends Control with sap.ui.core.Toolbar {
 
   def this(id: String) = this(id, js.undefined)
-  def this(settings: ToolbarSettings|js.Any) = this(js.undefined, settings)
+  def this(settings: ToolbarSettings) = this(js.undefined, settings)
 }
