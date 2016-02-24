@@ -65,4 +65,17 @@ class TextField(id: js.UndefOr[String] = js.native,
     * @return reference to this in order to allow method chaining
     */
   def setValue(value: String): this.type = js.native
+
+  /** Sets a new value for property imeMode.
+    * State of the Input Method Editor (IME).
+    *
+    * When called with a value of null or undefined, the default value of the
+    * property will be restored.
+    *
+    * Default value is ImeMode.Auto
+    *
+    * @param imeMode New value for property imeMode
+    * @return reference to this in order to allow method chaining
+    */
+  def setImeMode(imeMode: ImeMode): this.type = js.native
 }
