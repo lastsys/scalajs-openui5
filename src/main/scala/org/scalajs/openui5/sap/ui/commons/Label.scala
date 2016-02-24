@@ -35,4 +35,6 @@ class Label(id: js.UndefOr[String] = js.native,
             settings: js.UndefOr[LabelSettings] = js.native) extends Control
   with sap.ui.core.Label with ToolbarItem {
 
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: LabelSettings) = this(js.undefined, settings)
 }
