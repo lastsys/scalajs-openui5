@@ -33,7 +33,6 @@ trait ButtonSetters[T <: js.Object, B <: Settings[T,_]] extends ControlSetters[T
   def lite(v: Boolean) = setting("lite", v)
   def style(v: ButtonStyle) = setting("style", v)
 
-  def press(v: (Event) ⇒ Unit) = setting("press", v)
   def press(v: js.Function) = setting("press", v)
 }
 

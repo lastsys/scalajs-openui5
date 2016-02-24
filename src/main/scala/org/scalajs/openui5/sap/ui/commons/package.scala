@@ -5,4 +5,5 @@ package object commons {
   type TextViewDesign = String
   type TextViewColor = String
   type ToolbarDesign = String
+  type LabelDesign = String
 }
