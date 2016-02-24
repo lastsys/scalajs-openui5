@@ -14,4 +14,5 @@ package object core {
   type ValueState = String
   type ImeMode = String
   type Design = String
+  type TitleLevel = String
 }

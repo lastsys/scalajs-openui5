@@ -28,4 +28,13 @@ class HorizontalLayout(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: HorizontalLayoutSettings) = this(js.undefined, settings)
+
+  def addContent(content: Control): this.type = js.native
+  def destroyContent(): this.type = js.native
+  def getAllowWrapping(): Boolean = js.native
+  def getContent(): js.Array[Control] = js.native
+  def insertContent(content: Control, index: Int): this.type = js.native
+  def indexOfContent(content: Control): Int = js.native
+  def removeAllContent(): js.Array[Control] = js.native
+  def setAllowWrapping(allowWrapping: Boolean): this.type = js.native
 }
