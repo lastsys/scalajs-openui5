@@ -64,7 +64,7 @@ class TextField(id: js.UndefOr[String] = js.native,
     * @param value new value for property value
     * @return reference to this in order to allow method chaining
     */
-  def setValue(value: String): this.type = js.native
+  def setValue(value: String = ""): this.type = js.native
 
   /** Sets a new value for property imeMode.
     * State of the Input Method Editor (IME).
@@ -91,7 +91,7 @@ class TextField(id: js.UndefOr[String] = js.native,
     * @param editable new value for property editable
     * @return reference to this in order to allow method chaining
     */
-  def setEditable(editable: Boolean): this.type = js.native
+  def setEditable(editable: Boolean = true): this.type = js.native
 
   /** Sets a new value for property enabled.
     * Switches enabled state of the control. Disabled fields have different
@@ -105,5 +105,5 @@ class TextField(id: js.UndefOr[String] = js.native,
     * @param enabled new value for property enabled
     * @return reference to this in order to allow method chaining
     */
-  def setEnabled(enabled: Boolean): this.type = js.native
+  def setEnabled(enabled: Boolean = true): this.type = js.native
 }
