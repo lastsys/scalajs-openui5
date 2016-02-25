@@ -78,4 +78,32 @@ class TextField(id: js.UndefOr[String] = js.native,
     * @return reference to this in order to allow method chaining
     */
   def setImeMode(imeMode: ImeMode): this.type = js.native
+
+  /** Sets a new value for property editable.
+    * Switches edit state of the control. Read-only fields have different
+    * colors, depending on theme setting.
+    *
+    * When called with a value of null or undefined, the default value of the
+    * property will be restored.
+    *
+    * Default value is true.
+    *
+    * @param editable new value for property editable
+    * @return reference to this in order to allow method chaining
+    */
+  def setEditable(editable: Boolean): this.type = js.native
+
+  /** Sets a new value for property enabled.
+    * Switches enabled state of the control. Disabled fields have different
+    * colors, and can not be focused.
+    *
+    * When called with a value of null or undefined, the default value of the
+    * property will be restored.
+    *
+    * Default value is true.
+    *
+    * @param enabled new value for property enabled
+    * @return reference to this in order to allow method chaining
+    */
+  def setEnabled(enabled: Boolean): this.type = js.native
 }
