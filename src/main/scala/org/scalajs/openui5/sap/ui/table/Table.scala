@@ -1,19 +1,83 @@
 package org.scalajs.openui5.sap.ui.table
 
-import org.scalajs.openui5.sap.ui.core.Control
+import org.scalajs.openui5.sap.ui.commons.Toolbar
+import org.scalajs.openui5.sap.ui.core.{CSSSize, ControlSetters, ControlSettings, Control}
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 import scala.scalajs.js.|
 
-@ScalaJSDefined
-class BindingInfo extends js.Object {
 
+@ScalaJSDefined
+trait TableSettings extends ControlSettings
+object TableSettings extends TableSettingsBuilder(noSettings)
+
+class TableSettingsBuilder(val dict: SettingsMap)
+  extends Settings[TableSettings, TableSettingsBuilder](new TableSettingsBuilder(_))
+    with TableSetters[TableSettings, TableSettingsBuilder]
+
+trait TableSetters[T <: js.Object, B <: Settings[T,_]] extends ControlSetters[T, B] {
+  def width(v: CSSSize) = setting("width", v)
+  def rowHeight(v: Int) = setting("rowHeight", v)
+  def columnHeaderHeight(v: Int) = setting("columnHeaderHeight", v)
+  def columnHeaderVisible(v: Boolean) = setting("columnHeaderVisible", v)
+  def visibleRowCount(v: Int) = setting("visibleRowCount", v)
+  def firstVisibleRow(v: Int) = setting("firstVisibleRow", v)
+  def selectionMode(v: SelectionMode) = setting("selectionMode", v)
+  def selectionBehavior(v: SelectionBehavior) = setting("selectionBehavior", v)
+  def selectedIndex(v: Int) = setting("selectedIndex", v)
+  def editable(v: Boolean) = setting("editable", v)
+  def navigationMode(v: NavigationMode) = setting("navigationMode", v)
+  def threshold(v: Int) = setting("threshold", v)
+  def enableColumnReordering(v: Boolean) = setting("enableColumnReordering", v)
+  def enableGrouping(v: Boolean) = setting("enableGrouping", v)
+  def showColumnVisibilityMenu(v: Boolean) = setting("showColumnVisibilityMenu", v)
+  def showNoData(v: Boolean) = setting("showNoData", v)
+  def visibleRowCountMode(v: VisibleRowCountMode) = setting("visibleRowCountMode", v)
+  def minAutoRowCount(v: Int) = setting("minAutoRowCount", v)
+  def fixedColumnCount(v: Int) = setting("fixedColumnCount", v)
+  def fixedRowCount(v: Int) = setting("fixedRowCount", v)
+  def fixedBottomRowCount(v: Int) = setting("fixedBottomRowCount", v)
+  def enableColumnFreeze(v: Boolean) = setting("enableColumnFreeze", v)
+  def enableCellFilter(v: Boolean) = setting("enableCellFilter", v)
+  def showOverlay(v: Boolean) = setting("showOverlay", v)
+  def enableSelectAll(v: Boolean) = setting("enableSelectAll", v)
+  def enableCustomFilter(v: Boolean) = setting("enableCustomFilter", v)
+  def enableBusyIndicator(v: Boolean) = setting("enableBusyIndicator", v)
+  def allowColumnReordering(v: Boolean) = setting("allowColumnReordering", v)
+  def noDataText(v: String) = setting("noDataText", v)
+
+  def title(v: Control) = setting("title", v)
+  def footer(v: Control) = setting("footer", v)
+  def toolbar(v: Toolbar) = setting("toolbar", v)
+  def extension(v: js.Array[Control]) = setting("extension", v)
+  def columns(v: js.Array[Column]) = setting("columns", v)
+  def rows(v: js.Array[Row]) = setting("rows", v)
+  def noData(v: Control) = setting("noData", v)
+
+  def rowSelectionChange(v: js.Function) = setting("rowSelectionChange", v)
+  def columnSelect(v: js.Function) = setting("columnSelect", v)
+  def columnResize(v: js.Function) = setting("columnResize", v)
+  def columnMove(v: js.Function) = setting("columnMove", v)
+  def sort(v: js.Function) = setting("sort", v)
+  def filter(v: js.Function) = setting("filter", v)
+  def group(v: js.Function) = setting("group", v)
+  def columnVisibility(v: js.Function) = setting("columnVisibility", v)
+  def cellClick(v: js.Function) = setting("cellClick", v)
+  def cellContextmenu(v: js.Function) = setting("cellContextmenu", v)
+  def columnFreeze(v: js.Function) = setting("columnFreeze", v)
+  def customFilterFunction(v: js.Function) = setting("customFilterFunction", v)
 }
 
 @JSName("sap.ui.table.Table")
 @js.native
-trait Table extends Control {
+class Table(id: js.UndefOr[String] = js.native,
+            settings: js.UndefOr[TableSettings] = js.native) extends Control {
+
+  def this(id: String) = this(id, js.undefined)
+  def this(settings: TableSettings) = this(js.undefined, settings)
+
   /** Attaches event handler fnFunction to the 'columnVisibility' event of this
     * sap.ui.table.Table.
     *
@@ -135,4 +199,16 @@ trait Table extends Control {
     * @return Reference to this in order to allow method chaining
     */
   def clearSelection(): this.type = js.native
+
+  /** Destroys all the columns in the aggregation columns.
+    *
+    * @return Reference to this in order to allow method chaining
+    */
+  def destroyColumns(): this.type = js.native
+
+  /** Destroys all the rows in the aggregation rows.
+    *
+    * @return Reference to this in order to allow method chaining
+    */
+  def destroyRows(): this.type = js.native
 }
