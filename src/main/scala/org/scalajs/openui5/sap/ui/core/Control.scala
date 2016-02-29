@@ -63,6 +63,13 @@ class Control(id: js.UndefOr[String] = js.native,
     */
   def placeAt(ref: String | Element | Control,
               position: js.UndefOr[String | Int] = js.native): this.type = js.native
+
+  /** This triggers immediate rerendering of its parent and thus of itself
+    * and its children. As sap.ui.core.Element "bubbles up" the rerender,
+    * changes to child-Elements will also result in immediate rerendering of
+    * the whole sub tree.
+    */
+  def rerender(): Unit = js.native
 }
 
 @JSName("sap.ui.core.Control")

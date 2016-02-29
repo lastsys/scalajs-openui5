@@ -37,6 +37,7 @@ class EventProvider extends Object {
                   data: js.UndefOr[js.Dynamic] = js.undefined,
                   function: js.Function,
                   listener: js.UndefOr[js.Dynamic] = js.undefined): this.type = js.native
+  def attachEvent(eventId: String, function: js.Function): this.type = js.native
 
   /** Fires an event with the given settings and notifies all attached event handlers.
     *
