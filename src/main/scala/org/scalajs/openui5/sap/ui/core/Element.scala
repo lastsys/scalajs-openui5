@@ -87,4 +87,14 @@ class Element(id: js.UndefOr[String] = js.native,
     * @return	Returns the DOM Element that should get the focus
     */
   def getFocusDomRef(): dom.Element = js.native
+
+  /** Cleans up the resources associated with this element and all its children.
+    * After an element has been destroyed, it can no longer be used in the UI!
+    *
+    * Applications should call this method if they don't need the element any
+    * longer.
+    *
+    * @param suppressInvalidate if true, the UI element is not marked for redraw
+    */
+  def destroy(suppressInvalidate: js.UndefOr[Boolean]): Unit = js.native
 }

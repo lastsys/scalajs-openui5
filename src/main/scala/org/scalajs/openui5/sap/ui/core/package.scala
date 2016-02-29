@@ -15,4 +15,5 @@ package object core {
   type ImeMode = String
   type Design = String
   type TitleLevel = String
+  type Wrapping = String
 }
