@@ -16,4 +16,5 @@ package object core {
   type Design = String
   type TitleLevel = String
   type Wrapping = String
+  type Scrolling = String
 }
