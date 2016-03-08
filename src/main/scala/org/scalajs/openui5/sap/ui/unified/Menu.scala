@@ -24,7 +24,7 @@ trait MenuSetters[T <: js.Object, B <: Settings[T,_]]
   def maxVisibleItems(v: Int) = setting("maxVisibleItems", v)
   def pageSize(v: Int) = setting("pageSize", v)
 
-  def items(v: js.Array[MenuItemBase]) = setting("items", v)
+  def items(v: js.Array[MenuItemBase|MenuItem]) = setting("items", v)
 
   def itemSelect(v: js.Function) = setting("itemSelect", v)
 }
