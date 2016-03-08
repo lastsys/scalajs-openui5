@@ -2,10 +2,33 @@ package org.scalajs.openui5.sap.ui.unified
 
 import org.scalajs.dom
 import org.scalajs.openui5.sap.ui.core._
+import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 import scala.scalajs.js.|
+
+@ScalaJSDefined
+trait MenuSettings extends ControlSettings
+object MenuSettings extends MenuSettingsBuilder(noSettings)
+
+class MenuSettingsBuilder(val dict: SettingsMap)
+  extends Settings[MenuSettings, MenuSettingsBuilder](new MenuSettingsBuilder(_))
+    with MenuSetters[MenuSettings, MenuSettingsBuilder]
+
+trait MenuSetters[T <: js.Object, B <: Settings[T,_]]
+  extends ControlSetters[T, B] {
+
+  def enabled(v: Boolean) = setting("enabled", v)
+  def ariaDescription(v: String) = setting("ariaDescription", v)
+  def maxVisibleItems(v: Int) = setting("maxVisibleItems", v)
+  def pageSize(v: Int) = setting("pageSize", v)
+
+  def items(v: js.Array[MenuItemBase]) = setting("items", v)
+
+  def itemSelect(v: js.Function) = setting("itemSelect", v)
+}
+
 
 /** A menu is an interactive element which provides a choice of different
   * actions to the user. These actions (items) can also be organized in
