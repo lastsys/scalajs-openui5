@@ -41,9 +41,9 @@ trait MenuSetters[T <: js.Object, B <: Settings[T,_]]
 @JSName("sap.ui.unified.Menu")
 @js.native
 class Menu(id: js.UndefOr[String] = js.native,
-           settings: js.UndefOr[js.Any] = js.native) extends Control {
+           settings: js.UndefOr[MenuSettings] = js.native) extends Control {
   def this(id: String) = this(id, js.undefined)
-  def this(settings: js.Any) = this(js.undefined, settings)
+  def this(settings: MenuSettings) = this(js.undefined, settings)
 
   /** Opens the menu at the specified position.
     *

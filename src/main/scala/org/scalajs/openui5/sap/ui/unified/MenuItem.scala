@@ -1,7 +1,25 @@
 package org.scalajs.openui5.sap.ui.unified
 
+import org.scalajs.openui5.sap.ui.core.URI
+import org.scalajs.openui5.util.{Settings, SettingsMap, noSettings}
+
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+
+@ScalaJSDefined
+trait MenuItemSettings extends MenuItemBaseSettings
+object MenuItemSettings extends MenuItemSettingsBuilder(noSettings)
+
+class MenuItemSettingsBuilder(val dict: SettingsMap)
+  extends Settings[MenuItemSettings, MenuItemSettingsBuilder](new MenuItemSettingsBuilder(_))
+    with MenuItemSetters[MenuItemSettings, MenuItemSettingsBuilder]
+
+trait MenuItemSetters[T <: js.Object, B <: Settings[T,_]]
+  extends MenuItemBaseSetters[T, B] {
+
+  def text(v: String) = setting("text", v)
+  def icon(v: URI) = setting("icon", v)
+}
 
 /** Standard item to be used inside a menu. A menu item represents an action
   * which can be selected by the user in the menu or it can provide a submenu
@@ -12,7 +30,7 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.unified.MenuItem")
 @js.native
 class MenuItem(id: js.UndefOr[String] = js.native,
-               settings: js.UndefOr[js.Any] = js.native) extends MenuItemBase {
+               settings: js.UndefOr[MenuItemSettings] = js.native) extends MenuItemBase {
   def this(id: String) = this(id, js.undefined)
-  def this(settings: js.Any) = this(js.undefined, settings)
+  def this(settings: MenuItemSettings) = this(js.undefined, settings)
 }
