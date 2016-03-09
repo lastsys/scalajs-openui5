@@ -38,4 +38,6 @@ class CheckBox(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: CheckBoxSettings) = this(js.undefined, settings)
+
+  def getChecked(): Boolean = js.native
 }
