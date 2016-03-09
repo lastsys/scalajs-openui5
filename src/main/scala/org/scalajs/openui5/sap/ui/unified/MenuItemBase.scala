@@ -38,4 +38,5 @@ class MenuItemBase(id: js.UndefOr[String] = js.native,
                    settings: js.UndefOr[MenuItemBaseSettings] = js.native)
   extends Element {
 
+  def setSubmenu(subMenu: Menu): this.type = js.native
 }
