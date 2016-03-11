@@ -11,4 +11,6 @@ import scala.scalajs.js.annotation.JSName
 class Model extends MessageProcessor {
   def setSizeLimit(sizeLimit: Int): this.type = js.native
   def refresh(forceUpdate: Boolean = false): this.type = js.native
+  def getObject[T <: js.Any](path: String,
+                             context: js.UndefOr[js.Any] = js.undefined): T = js.native
 }

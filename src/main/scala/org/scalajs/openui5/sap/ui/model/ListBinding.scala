@@ -7,5 +7,5 @@ import scala.scalajs.js.annotation.JSName
 @js.native
 class ListBinding extends Binding {
   def filter(filters: js.Array[Filter],
-             filterType: js.UndefOr[String] = js.undefined): ListBinding = js.native
+             filterType: js.UndefOr[FilterType] = js.undefined): this.type = js.native
 }
