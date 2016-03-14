@@ -51,4 +51,18 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @return notification bar
     */
   def getNotificationBar(): NotificationBar = js.native
+
+  /** Sets a new value for property showPane.
+    *
+    * Whether the pane bar should be displayed at all or not.
+    *
+    * When called with a value of null or undefined, the default value of the
+    * property will be restored.
+    *
+    * Default value is true.
+    *
+    * @param showPane New value for property showPane
+    * @return Reference to this in order to allow method chaining
+    */
+  def setShowPaneBar(showPane: Boolean): this.type = js.native
 }
