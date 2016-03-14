@@ -65,4 +65,21 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @return Reference to this in order to allow method chaining
     */
   def setShowPaneBar(showPane: Boolean): this.type = js.native
+
+  /** Opens the side Pane.
+    *
+    * A valid ID of a paneBarItem must be given, so this item can be marked
+    * as selected. A "paneBarItemSelected" event is then fired as if the
+    * opening was triggered by the user by a click on the respective
+    * PaneBarItem. This method can be called (with different IDs) even when
+    * the Pane is already open. It has then the same effect as if the user
+    * switches between PaneBarItems.
+    *
+    * Returns 'this' to allow method chaining.
+    *
+    * @param paneBarItemId The ID of the PaneBarItem which shoule be marked
+    *                      as selected.
+    * @return Referenced to this in order to allow method chaining
+    */
+  def openPane(paneBarItemId: String): this.type = js.native
 }
