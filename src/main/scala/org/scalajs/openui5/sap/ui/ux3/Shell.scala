@@ -82,4 +82,18 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @return Referenced to this in order to allow method chaining
     */
   def openPane(paneBarItemId: String): this.type = js.native
+
+  /** Sets a new value for property appTitle.
+    *
+    * The application title to appear in the left part of the header, usually
+    * a company and/or product name. appIcon and appTitle are both optional
+    * and can both be set; in this case the icon appears first.
+    *
+    * When called with a value of null or undefined, the default value of the
+    * property will be restored.
+    *
+    * @param appTitle New value for property appTitle
+    * @return Reference to this in order to allow method chaining
+    */
+  def setAppTitle(appTitle: String): this.type = js.native
 }
