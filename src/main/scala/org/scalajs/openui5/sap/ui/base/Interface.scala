@@ -10,6 +10,6 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.ui.base.Interface")
 @js.native
 class Interface(`object`: Object,
-                methods: js.Array[String]) {
+                methods: js.Array[String]) extends js.Object {
 
 }

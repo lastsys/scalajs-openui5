@@ -14,9 +14,9 @@ version := "0.1.0-SNAPSHOT"
 
 organization := "com.lastsys"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.10.6", "2.11.7")
+crossScalaVersions := Seq("2.10.6", "2.11.8")
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 

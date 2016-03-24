@@ -14,5 +14,5 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.m.NavContainer")
 @js.native
 class NavContainer extends Control {
-
+  def to(pageId: String): this.type = js.native
 }

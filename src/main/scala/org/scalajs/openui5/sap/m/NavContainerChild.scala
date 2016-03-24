@@ -25,6 +25,6 @@ import scala.scalajs.js.annotation.JSName
   */
 @JSName("sap.m.NavContainerChild")
 @js.native
-trait NavContainerChild {
+trait NavContainerChild extends js.Object {
 
 }

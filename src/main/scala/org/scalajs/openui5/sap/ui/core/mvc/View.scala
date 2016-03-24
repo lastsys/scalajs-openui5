@@ -16,4 +16,5 @@ class View(id: js.UndefOr[String] = js.native,
   def byId[T <: Element](id: String): T = js.native
   def getViewData[T <: js.Any]() : T = js.native
   def getViewName(): String = js.native
+  def getController(): Controller = js.native
 }

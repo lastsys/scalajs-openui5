@@ -152,7 +152,9 @@ trait ManagedObjectSetters[T <: js.Object, B <: Settings[T,_]]
   * the state of a managed object, as that would bypass the overriding higher
   * level methods and their side effects.
   *
-  * @note Since 1.11.2. ManagedObject as such is public and usable. Only the
+  * @since 1.11.2
+  *
+  * @note ManagedObject as such is public and usable. Only the
   *       support for the optional parameter oScope in the constructor is
   *       still experimental and might change in future versions.
   *       Applications should not rely on it.
@@ -188,6 +190,8 @@ class ManagedObject(id: js.UndefOr[String] = js.native,
     * @return the object's Id
     */
   def getId(): String = js.native
+
+  def bindAggregation(name: String, bindingInfo: js.Any): this.type = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")

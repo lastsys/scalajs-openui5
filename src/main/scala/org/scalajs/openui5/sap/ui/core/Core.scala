@@ -9,4 +9,5 @@ import org.scalajs.openui5.sap.ui.base.Object
 @js.native
 final class Core extends Object {
   def attachInit(function: js.Function): Unit = js.native
+  def byId[T <: Element](id: String): T = js.native
 }

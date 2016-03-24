@@ -1,6 +1,6 @@
 package org.scalajs.openui5.sap
 
-import org.scalajs.openui5.sap.ui.core.Core
+import org.scalajs.openui5.sap.ui.core.{Control, Core}
 import org.scalajs.openui5.sap.ui.core.mvc.{Controller, View}
 
 import scala.scalajs.js
@@ -16,4 +16,7 @@ package object ui {
   def view(id: String, view: String | js.Any): View = Ui.view(id, view)
 
   def getCore(): Core = Ui.getCore()
+
+  def xmlfragment(fragment: String | js.Any): Control = Ui.xmlfragment(fragment)
+  def xmlfragment(fragment: String | js.Any, controller: Controller): Control = Ui.xmlfragment(fragment)
 }

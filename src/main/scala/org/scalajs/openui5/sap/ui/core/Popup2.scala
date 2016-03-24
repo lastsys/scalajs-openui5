@@ -39,5 +39,5 @@ import scala.scalajs.js.annotation.JSName
   */
 @JSName("sap.ui.core.Popup")
 @js.native
-class Popup2 {
+class Popup2 extends js.Object {
 }
