@@ -9,4 +9,6 @@ package object m {
   type ListSeparators = String
   type SwipeDirection = String
   type ButtonType = String
+  type InputType = String
+  type ListType = String
 }

@@ -17,4 +17,5 @@ package object core {
   type TitleLevel = String
   type Wrapping = String
   type Scrolling = String
+  type VerticalAlign = String
 }
