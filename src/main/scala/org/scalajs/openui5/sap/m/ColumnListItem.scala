@@ -26,7 +26,7 @@ trait ColumnListItemSetters[T <: js.Object, B <: Settings[T,_]]
 @js.native
 class ColumnListItem(id: js.UndefOr[String] = js.native,
                      settings: js.UndefOr[ColumnListItemSettings] = js.native)
-  extends InputBase {
+  extends ListItemBase {
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: ColumnListItemSettings) = this(js.undefined, settings)
