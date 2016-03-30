@@ -17,6 +17,8 @@ package object ui {
 
   def getCore(): Core = Ui.getCore()
 
-  def xmlfragment(fragment: String | js.Any): Control = Ui.xmlfragment(fragment)
-  def xmlfragment(fragment: String | js.Any, controller: Controller): Control = Ui.xmlfragment(fragment)
+  def xmlfragment[T <: Control](fragment: String): T =
+    Ui.xmlfragment(fragment)
+  def xmlfragment[T <: Control](fragment: String, controller: Controller): T =
+    Ui.xmlfragment(fragment)
 }

@@ -15,6 +15,13 @@ class Tree(id: js.UndefOr[String] = js.native,
   def this(settings: js.Any) = this(js.undefined, settings)
 
   def bindNodes(bindingInfo: js.Dynamic): this.type = js.native
+  def getNodeByContext(context: Context): TreeNode = js.native
+
+  // new stuff? undocumented so far
+  def getSelection(): TreeNode = js.native
+  def setSelection(selection: TreeNode): this.type = js.native
+
+  // deprecated? not in documentation anymore
   def getSelectedIndices(): js.Array[Int] = js.native
   def getContextByIndex(index: Int): Context = js.native
   def clearSelection(): this.type = js.native

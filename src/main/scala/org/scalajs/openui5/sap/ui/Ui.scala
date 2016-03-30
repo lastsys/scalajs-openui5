@@ -20,6 +20,7 @@ object Ui extends js.Object {
 
   def getCore(): Core = js.native
 
-  def xmlfragment(fragment: String | js.Any): Control = js.native
-  def xmlfragment(fragment: String | js.Any, controller: Controller): Control = js.native
+  def xmlfragment[T <: Control](fragment: String): T = js.native
+  def xmlfragment[T <: Control](fragment: String, controller: Controller): T =
+    js.native
 }
