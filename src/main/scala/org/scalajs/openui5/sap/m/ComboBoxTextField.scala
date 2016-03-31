@@ -6,5 +6,4 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.m.ComboBoxTextField")
 @js.native
 class ComboBoxTextField extends InputBase {
-
 }
