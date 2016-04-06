@@ -6,5 +6,4 @@ import scala.scalajs.js.annotation.JSName
 @JSName("sap.m.StandardListItem")
 @js.native
 class StandardListItem extends ListItemBase {
-
 }
