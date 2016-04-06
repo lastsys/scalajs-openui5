@@ -61,4 +61,7 @@ class ListBase(id: js.UndefOr[String] = js.native,
   def this(settings: ListBaseSettings) = this(js.undefined, settings)
 
   def bindItems(bindingInfo: js.Any): this.type = js.native
+
+  def getSelectedItem[T <: ListItemBase](): T = js.native
+  def getSelectedItems[T <: ListItemBase](): js.Array[T] = js.native
 }
