@@ -1,6 +1,7 @@
 package org.scalajs.openui5.sap.m
 
 import org.scalajs.openui5.sap.ui.core.{CSSSize, Control, ControlSetters, ControlSettings}
+import org.scalajs.openui5.sap.ui.model.Context
 import org.scalajs.openui5.util.{Settings, SettingsMap, noSettings}
 
 import scala.scalajs.js
@@ -62,6 +63,7 @@ class ListBase(id: js.UndefOr[String] = js.native,
 
   def bindItems(bindingInfo: js.Any): this.type = js.native
 
+  def getSelectedContexts(all: Boolean): js.Array[Context] = js.native
   def getSelectedItem[T <: ListItemBase](): T = js.native
   def getSelectedItems[T <: ListItemBase](): js.Array[T] = js.native
 }
