@@ -66,4 +66,5 @@ class ListBase(id: js.UndefOr[String] = js.native,
   def getSelectedContexts(all: Boolean): js.Array[Context] = js.native
   def getSelectedItem[T <: ListItemBase](): T = js.native
   def getSelectedItems[T <: ListItemBase](): js.Array[T] = js.native
+  def removeSelections(all: Boolean): this.type = js.native
 }
