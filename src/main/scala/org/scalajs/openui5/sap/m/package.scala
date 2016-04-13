@@ -11,4 +11,5 @@ package object m {
   type ButtonType = String
   type InputType = String
   type ListType = String
+  type SelectType = String
 }
