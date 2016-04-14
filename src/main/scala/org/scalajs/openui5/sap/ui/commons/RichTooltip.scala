@@ -27,7 +27,7 @@ trait RichTooltipSetters[T <: js.Object, B <: Settings[T, _]]
   def imageAltText(v: String) = setting("imageAltText", v)
 }
 
-@JSName("sap.ui.commons.RichTooltip")
+@JSName("sap.m.RichTooltip")
 @js.native
 class RichTooltip(id: js.UndefOr[String] = js.native,
                   settings: js.UndefOr[RichTooltipSettings])

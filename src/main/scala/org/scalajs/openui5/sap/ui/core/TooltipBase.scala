@@ -27,7 +27,7 @@ trait TooltipBaseSetters[T <: js.Object, B <: Settings[T,_]]
   def closeDelay(v: Int) = setting("closeDelay", v)
 }
 
-@JSName("sap.ui.core.TooltipBase")
+@JSName("sap.m.TooltipBase")
 @js.native
 class TooltipBase(id: js.UndefOr[String] = js.native,
                   settings: js.UndefOr[TooltipBaseSettings] = js.native)

@@ -24,7 +24,7 @@ trait DatePickerSetters[T <: js.Object, B <: Settings[T,_]]
   def secondaryCalendarType(v: CalendarType) = setting("secondaryCalendarType", v)
 }
 
-@JSName("sap.ui.commons.DatePicker")
+@JSName("sap.m.DatePicker")
 @js.native
 class DatePicker(id: js.UndefOr[String] = js.native,
                   settings: js.UndefOr[DatePickerSettings])
