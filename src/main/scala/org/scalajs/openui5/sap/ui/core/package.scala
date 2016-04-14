@@ -18,4 +18,5 @@ package object core {
   type Wrapping = String
   type Scrolling = String
   type VerticalAlign = String
+  type CalendarType = String
 }
