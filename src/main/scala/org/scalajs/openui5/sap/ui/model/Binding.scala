@@ -14,6 +14,5 @@ import scala.scalajs.js.annotation.JSName
   */
 @JSName("sap.ui.model.Binding")
 @js.native
-trait Binding extends EventProvider {
+trait Binding extends EventProvider
 
-}
