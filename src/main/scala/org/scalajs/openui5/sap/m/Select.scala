@@ -38,12 +38,14 @@ trait SelectSetters[T <: js.Object, B <: Settings[T,_]]
 @JSName("sap.m.Select")
 @js.native
 class Select(id: js.UndefOr[String] = js.native,
-                  settings: js.UndefOr[SelectSettings])
+             settings: js.UndefOr[SelectSettings])
   extends Control {
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: SelectSettings) = this(js.undefined, settings)
 
   def getSelectedKey(): String = js.native
+  def getSelectedItem(): Item = js.native
+  def getSelectedItemId(): String = js.native
   def setEnabled(enabled: Boolean): this.type = js.native
 }
