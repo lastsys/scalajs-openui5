@@ -49,4 +49,6 @@ class Input(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: InputSettings) = this(js.undefined, settings)
+
+  def setEnabled(enabled: Boolean): this.type = js.native
 }

@@ -45,5 +45,5 @@ class Select(id: js.UndefOr[String] = js.native,
   def this(settings: SelectSettings) = this(js.undefined, settings)
 
   def getSelectedKey(): String = js.native
-  def setEnabled(enabled: Boolean): String = js.native
+  def setEnabled(enabled: Boolean): this.type = js.native
 }
