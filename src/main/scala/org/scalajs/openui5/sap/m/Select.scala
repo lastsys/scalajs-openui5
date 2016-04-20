@@ -35,7 +35,7 @@ trait SelectSetters[T <: js.Object, B <: Settings[T,_]]
   def change(v: js.Function) = setting("change", v)
 }
 
-@JSName("sap.ui.commons.Select")
+@JSName("sap.m.Select")
 @js.native
 class Select(id: js.UndefOr[String] = js.native,
                   settings: js.UndefOr[SelectSettings])
