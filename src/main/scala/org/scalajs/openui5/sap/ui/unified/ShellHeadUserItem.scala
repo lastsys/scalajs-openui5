@@ -32,4 +32,6 @@ class ShellHeadUserItem(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: ShellHeadUserItemSettings) = this(js.undefined, settings)
+
+  def setUsername(username: String): this.type = js.native
 }
