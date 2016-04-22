@@ -12,4 +12,5 @@ package object m {
   type InputType = String
   type ListType = String
   type SelectType = String
+  type VerticalPlacementType = String
 }
