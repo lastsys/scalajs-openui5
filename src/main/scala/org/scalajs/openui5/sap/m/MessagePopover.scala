@@ -43,4 +43,5 @@ class MessagePopover(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: MessagePopoverSettings) = this(js.undefined, settings)
 
+  def openBy(control: Control): this.type = js.native
 }
