@@ -34,7 +34,7 @@ trait MessagePopoverSetters[T <: js.Object, B <: Settings[T, _]]
   def urlValidated(v: js.Function) = setting("urlValidated", v)
 }
 
-@JSName("sap.ui.unified.MessagePopover")
+@JSName("sap.m.MessagePopover")
 @js.native
 class MessagePopover(id: js.UndefOr[String] = js.native,
                         settings: js.UndefOr[MessagePopoverSettings] = js.native)

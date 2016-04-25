@@ -24,7 +24,7 @@ trait MessagePopoverItemSetters[T <: js.Object, B <: Settings[T, _]]
   def longtextUrl(v: URI) = setting("longtextUrl", v)
 }
 
-@JSName("sap.ui.unified.MessagePopoverItem")
+@JSName("sap.m.MessagePopoverItem")
 @js.native
 class MessagePopoverItem(id: js.UndefOr[String] = js.native,
                      settings: js.UndefOr[MessagePopoverItemSettings] = js.native)
