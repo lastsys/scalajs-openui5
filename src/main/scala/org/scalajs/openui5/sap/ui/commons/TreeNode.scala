@@ -38,6 +38,9 @@ class TreeNode(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: TreeNodeSettings) = this(js.undefined, settings)
 
+  def getNodes(): js.Array[TreeNode] = js.native
+  def getExpanded(): Boolean = js.native
+
   def attachSelected(data: js.Any,
                      function: js.Function1[Event, Unit],
                      listener: js.Any): this.type = js.native

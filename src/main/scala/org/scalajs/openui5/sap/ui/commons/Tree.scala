@@ -25,4 +25,6 @@ class Tree(id: js.UndefOr[String] = js.native,
   def getSelectedIndices(): js.Array[Int] = js.native
   def getContextByIndex(index: Int): Context = js.native
   def clearSelection(): this.type = js.native
+
+  def getNodes(): js.Array[TreeNode] = js.native
 }
