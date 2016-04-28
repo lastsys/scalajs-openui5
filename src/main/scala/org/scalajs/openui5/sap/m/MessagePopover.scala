@@ -44,6 +44,7 @@ class MessagePopover(id: js.UndefOr[String] = js.native,
   def this(settings: MessagePopoverSettings) = this(js.undefined, settings)
 
   def addItem(item: MessagePopoverItem): this.type = js.native
+  def insertItem(item: MessagePopoverItem, index: Int): this.type = js.native
   def close(): this.type = js.native
   def destroyItems(): this.type = js.native
   def isOpen(): Boolean = js.native

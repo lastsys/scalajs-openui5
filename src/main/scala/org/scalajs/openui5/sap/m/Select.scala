@@ -48,4 +48,7 @@ class Select(id: js.UndefOr[String] = js.native,
   def getSelectedItem(): Item = js.native
   def getSelectedItemId(): String = js.native
   def setEnabled(enabled: Boolean): this.type = js.native
+
+  def addItem(item: Item): this.type = js.native
+  def setSelectedKey(key: String): this.type = js.native
 }
