@@ -13,4 +13,5 @@ class Model extends MessageProcessor {
   def refresh(forceUpdate: Boolean = false): this.type = js.native
   def getObject[T <: js.Any](path: String,
                              context: js.UndefOr[js.Any] = js.undefined): T = js.native
+  def setDefaultBindingMode(mode: BindingMode): this.type = js.native
 }
