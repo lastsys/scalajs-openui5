@@ -16,13 +16,12 @@ class MenuButtonSettingsBuilder(val dict: SettingsMap)
     with MenuButtonSetters[MenuButtonSettings, MenuButtonSettingsBuilder]
 
 trait MenuButtonSetters[T <: js.Object, B <: Settings[T, _]] extends ButtonSetters[T, B] {
-  def ariaDescription(v: String) = setting("ariaDescription", v)
-  def maxVisibleItems(v: Int) = setting("maxVisibleItems", v)
-  def pageSize(v: Int) = setting("pageSize", v)
+  def dockButton(v: String) = setting("dockButton", v)
+  def dockMenu(v: String) = setting("dockMenu", v)
 
-  def items(v: js.Array[MenuItemBase]) = setting("items", v)
+  def menu(v: Menu) = setting("menu", v)
 
-  def itemSelect(v: js.Function) = setting("itemSelect", v)
+  def itemSelected(v: js.Function) = setting("itemSelected", v)
 }
 
 /** Common button control that opens a menu when clicked by the user. The
