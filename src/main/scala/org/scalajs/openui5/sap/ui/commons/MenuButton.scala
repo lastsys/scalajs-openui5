@@ -8,15 +8,14 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
 
 @ScalaJSDefined
-trait MenuButtonSettings extends ControlSettings
+trait MenuButtonSettings extends ButtonSettings
 object MenuButtonSettings extends MenuButtonSettingsBuilder(noSettings)
 
 class MenuButtonSettingsBuilder(val dict: SettingsMap)
   extends Settings[MenuButtonSettings, MenuButtonSettingsBuilder](new MenuButtonSettingsBuilder(_))
     with MenuButtonSetters[MenuButtonSettings, MenuButtonSettingsBuilder]
 
-trait MenuButtonSetters[T <: js.Object, B <: Settings[T, _]] extends ControlSetters[T, B] {
-  def enabled(v: Boolean) = setting("enabled", v)
+trait MenuButtonSetters[T <: js.Object, B <: Settings[T, _]] extends ButtonSetters[T, B] {
   def ariaDescription(v: String) = setting("ariaDescription", v)
   def maxVisibleItems(v: Int) = setting("maxVisibleItems", v)
   def pageSize(v: Int) = setting("pageSize", v)
