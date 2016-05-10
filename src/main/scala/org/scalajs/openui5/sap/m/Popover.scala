@@ -49,10 +49,10 @@ trait PopoverSetters[T <: js.Object, B <: Settings[T, _]] extends ControlSetters
 @JSName("sap.m.Popover")
 @js.native
 class Popover(id: js.UndefOr[String] = js.native,
-                 settings: js.UndefOr[PopoverSettings] = js.native) extends Control {
+              settings: js.UndefOr[PopoverSettings] = js.native) extends Control {
   def this(id: String) = this(id, js.undefined)
   def this(settings: PopoverSettings) = this(js.undefined, settings)
 
   def openBy(control: Control,
-             skipInstanceManager: js.UndefOr[Boolean]): this.type = js.native
+             skipInstanceManager: js.UndefOr[Boolean] = js.native: this.type = js.native
 }
