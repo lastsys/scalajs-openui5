@@ -97,4 +97,13 @@ class Element(id: js.UndefOr[String] = js.native,
     * @param suppressInvalidate if true, the UI element is not marked for redraw
     */
   def destroy(suppressInvalidate: js.UndefOr[Boolean]): Unit = js.native
+
+  /** Adds some dependent to the aggregation dependents.
+    *
+    * @since 1.19
+    *
+    * @param dependent The dependent to add; if empty, nothing is inserted
+    * @return Reference to this in order to allow method chaining
+    */
+  def addDependent(dependent: Control): this.type = js.native
 }
