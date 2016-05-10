@@ -13,4 +13,5 @@ package object m {
   type ListType = String
   type SelectType = String
   type VerticalPlacementType = String
+  type PlacementType = String
 }
