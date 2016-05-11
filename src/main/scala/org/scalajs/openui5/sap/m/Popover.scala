@@ -58,4 +58,5 @@ class Popover(id: js.UndefOr[String] = js.native,
 
   def close(): this.type = js.native
   def setFooter(footer: Control): this.type = js.native
+  def setEndButton(endButton: Control): this.type = js.native
 }
