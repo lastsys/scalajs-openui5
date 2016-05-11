@@ -14,4 +14,5 @@ package object m {
   type SelectType = String
   type VerticalPlacementType = String
   type PlacementType = String
+  type ToolbarDesign = String
 }
