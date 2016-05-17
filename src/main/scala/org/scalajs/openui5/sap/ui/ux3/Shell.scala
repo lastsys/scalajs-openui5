@@ -96,4 +96,6 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @return Reference to this in order to allow method chaining
     */
   def setAppTitle(appTitle: String): this.type = js.native
+
+  def setAppIconTooltip(tooltip: String): this.type = js.native
 }
