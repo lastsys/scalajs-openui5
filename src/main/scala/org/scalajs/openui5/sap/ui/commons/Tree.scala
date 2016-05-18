@@ -27,4 +27,6 @@ class Tree(id: js.UndefOr[String] = js.native,
   def clearSelection(): this.type = js.native
 
   def getNodes(): js.Array[TreeNode] = js.native
+
+  def collapseAll(): this.type = js.native
 }
