@@ -34,9 +34,9 @@ class EventProvider extends Object {
     * @return Returns this to allow method chaining
     */
   def attachEvent(eventId: String,
-                  data: js.UndefOr[js.Dynamic] = js.undefined,
+                  data: js.UndefOr[js.Any] = js.undefined,
                   function: js.Function,
-                  listener: js.UndefOr[js.Dynamic] = js.undefined): this.type = js.native
+                  listener: js.UndefOr[js.Any] = js.undefined): this.type = js.native
   def attachEvent(eventId: String, function: js.Function): this.type = js.native
 
   /** Fires an event with the given settings and notifies all attached event handlers.
@@ -56,7 +56,7 @@ class EventProvider extends Object {
     *         default action should be executed, false otherwise.
     */
   def fireEvent(eventId: String,
-                parameters: js.UndefOr[js.Dynamic] = js.undefined,
+                parameters: js.UndefOr[js.Any] = js.undefined,
                 allowPreventDefault: js.UndefOr[Boolean] = js.undefined,
                 enableEventBubbling: js.UndefOr[Boolean] = js.undefined): this.type | Boolean = js.native
 }
