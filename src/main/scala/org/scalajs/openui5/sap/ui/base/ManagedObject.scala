@@ -196,6 +196,4 @@ class ManagedObject(id: js.UndefOr[String] = js.native,
 
 @JSName("sap.ui.base.ManagedObject")
 @js.native
-object ManagedObject extends Object {
-
-}
+object ManagedObject extends Object

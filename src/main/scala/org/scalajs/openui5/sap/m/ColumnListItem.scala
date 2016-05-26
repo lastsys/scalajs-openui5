@@ -1,6 +1,6 @@
 package org.scalajs.openui5.sap.m
 
-import org.scalajs.openui5.sap.ui.core.VerticalAlign
+import org.scalajs.openui5.sap.ui.core.{Control, VerticalAlign}
 import org.scalajs.openui5.util.{Settings, SettingsMap, noSettings}
 
 import scala.scalajs.js
@@ -19,7 +19,7 @@ trait ColumnListItemSetters[T <: js.Object, B <: Settings[T,_]]
 
   def vAlign(v: VerticalAlign) = setting("vAlign", v)
 
-  def cells(v: js.Array[ListItemBase]) = setting("cells", v)
+  def cells(v: js.Array[Control]) = setting("cells", v)
 }
 
 @JSName("sap.m.ColumnListItem")

@@ -1,5 +1,6 @@
 package org.scalajs.openui5.sap.m
 
+import org.scalajs.openui5.sap.ui.base.Object
 import org.scalajs.openui5.sap.ui.core.{Control, ControlSetters, ControlSettings}
 import org.scalajs.openui5.util.{Settings, SettingsMap, noSettings}
 
@@ -38,3 +39,7 @@ class ListItemBase(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: ListItemBaseSettings) = this(js.undefined, settings)
 }
+
+@JSName("sap.m.ListItemBase")
+@js.native
+object ListItemBase extends Object
