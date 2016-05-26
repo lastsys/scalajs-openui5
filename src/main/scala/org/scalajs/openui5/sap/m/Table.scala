@@ -36,4 +36,6 @@ class Table(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: TableSettings) = this(js.undefined, settings)
+
+  def addColumn(column: Column): this.type = js.native
 }

@@ -15,4 +15,6 @@ package object m {
   type VerticalPlacementType = String
   type PlacementType = String
   type ToolbarDesign = String
+  type PopinDisplay = String
+  type LabelDesign = String
 }
