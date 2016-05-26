@@ -19,7 +19,7 @@ trait ColumnListItemSetters[T <: js.Object, B <: Settings[T,_]]
 
   def vAlign(v: VerticalAlign) = setting("vAlign", v)
 
-  def cells(v: js.Array[Control]) = setting("cells", v)
+  def cells(v: js.Array[_ <: Control]) = setting("cells", v)
 }
 
 @JSName("sap.m.ColumnListItem")
