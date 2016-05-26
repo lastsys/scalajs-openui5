@@ -38,6 +38,7 @@ class Control(id: js.UndefOr[String] = js.native,
   def removeStyleClass(styleClass: String): this.type = js.native
   def setBusy(busy: Boolean): this.type = js.native
   def setVisible(visible: Boolean): this.type = js.native
+  def getVisible(): Boolean = js.native
 
   /** Puts this control into the specified container (oRef) at the given
     * position (oPosition).
