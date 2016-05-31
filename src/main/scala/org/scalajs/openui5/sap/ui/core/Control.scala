@@ -37,6 +37,13 @@ class Control(id: js.UndefOr[String] = js.native,
   def addStyleClass(styleClass: String): this.type = js.native
   def removeStyleClass(styleClass: String): this.type = js.native
   def setBusy(busy: Boolean): this.type = js.native
+
+  /** Define the delay, after which the busy indicator will show up.
+    *
+    * @param delay delay in milliseconds
+    * @return this to allow method chaining
+    */
+  def setBusyIndicatorDelay(delay: Int): this.type = js.native
   def setVisible(visible: Boolean): this.type = js.native
   def getVisible(): Boolean = js.native
 
