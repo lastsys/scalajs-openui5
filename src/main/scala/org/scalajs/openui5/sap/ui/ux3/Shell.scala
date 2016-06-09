@@ -64,7 +64,7 @@ class Shell(id: js.UndefOr[String] = js.native,
     * @param showPane New value for property showPane
     * @return Reference to this in order to allow method chaining
     */
-  def setShowPaneBar(showPane: Boolean): this.type = js.native
+  def setShowPane(showPane: Boolean): this.type = js.native
 
   /** Opens the side Pane.
     *
