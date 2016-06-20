@@ -7,4 +7,6 @@ import scala.scalajs.js
 @js.native
 class IconTabBar extends Control with ObjectHeaderContainer {
   def getItems[T <: IconTab](): js.Array[T] = js.native
+  def getSelectedKey(): String = js.native
+  def setSelectedKey(key: String): this.type = js.native
 }
