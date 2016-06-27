@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 @js.native
 object Ui extends js.Object {
   def controller(name: String,
-                 controllerImpl: js.Any): Unit = js.native
+                 controllerImpl: js.Any): Controller = js.native
   def controller(name: String): Controller = js.native
 
   def view(id: String): View = js.native

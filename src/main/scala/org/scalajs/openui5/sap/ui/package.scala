@@ -8,7 +8,7 @@ import scala.scalajs.js.|
 
 package object ui {
   def controller(name: String,
-                 controllerImpl: js.Any): Unit = Ui.controller(name, controllerImpl)
+                 controllerImpl: js.Any): Controller = Ui.controller(name, controllerImpl)
   def controller(name: String): Controller = Ui.controller(name)
 
   def view(id: String): View = Ui.view(id)
