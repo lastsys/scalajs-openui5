@@ -25,4 +25,6 @@ class Row(id: js.UndefOr[String] = js.native,
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: RowSettings) = this(js.undefined, settings)
+
+  def getIndex(): Int = js.native
 }

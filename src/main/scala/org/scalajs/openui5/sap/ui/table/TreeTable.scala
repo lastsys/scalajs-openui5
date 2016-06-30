@@ -1,5 +1,7 @@
 package org.scalajs.openui5.sap.ui.table
 
+import org.scalajs.openui5.sap.ui.model.Context
+
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 

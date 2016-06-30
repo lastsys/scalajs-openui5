@@ -1,8 +1,9 @@
 package org.scalajs.openui5.sap.ui.table
 
 import org.scalajs.openui5.sap.ui.commons.Toolbar
-import org.scalajs.openui5.sap.ui.core.{CSSSize, ControlSetters, ControlSettings, Control}
-import org.scalajs.openui5.util.{SettingsMap, Settings, noSettings}
+import org.scalajs.openui5.sap.ui.core.{CSSSize, Control, ControlSetters, ControlSettings}
+import org.scalajs.openui5.sap.ui.model.Context
+import org.scalajs.openui5.util.{Settings, SettingsMap, noSettings}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
@@ -211,4 +212,18 @@ class Table(id: js.UndefOr[String] = js.native,
     * @return Reference to this in order to allow method chaining
     */
   def destroyRows(): this.type = js.native
+
+  def getContextByIndex(index: Int): Context = js.native
+
+  def getRows(): js.Array[Row] = js.native
+
+  def setSelectedIndex(selectedIndex: Int): this.type = js.native
+
+  def setSelectionInterval(indexFrom: Int, indexTo: Int): this.type = js.native
+
+  def removeSelectionInterval(indexFrom: Int, indexTo: Int): this.type = js.native
+
+  def getSelectedIndex(): Int = js.native
+
+  def isIndexSelected(index: Int): Boolean = js.native
 }
