@@ -41,4 +41,6 @@ class Button(id: js.UndefOr[String] = js.native,
   def this(settings: ButtonSettings) = this(js.undefined, settings)
 
   def setText(text: String): this.type = js.native
+
+  def attachPress(function: js.Function): this.type = js.native
 }
