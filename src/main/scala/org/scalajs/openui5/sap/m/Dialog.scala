@@ -46,7 +46,7 @@ trait DialogSetters[T <: js.Object, B <: Settings[T, _]] extends ControlSetters[
 @JSName("sap.m.Dialog")
 @js.native
 class Dialog(id: js.UndefOr[String] = js.native,
-             settings: js.UndefOr[js.Any] = js.native) extends Control with PopupInterface {
+             settings: js.UndefOr[DialogSettings] = js.native) extends Control with PopupInterface {
 
   def this(id: String) = this(id, js.undefined)
   def this(settings: DialogSettings) = this(js.undefined, settings)
