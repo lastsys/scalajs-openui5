@@ -17,4 +17,5 @@ package object m {
   type ToolbarDesign = String
   type PopinDisplay = String
   type LabelDesign = String
+  type DialogType = String
 }
