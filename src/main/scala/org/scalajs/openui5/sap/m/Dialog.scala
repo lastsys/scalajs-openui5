@@ -55,4 +55,8 @@ class Dialog(id: js.UndefOr[String] = js.native,
   def open(): Unit = js.native
 
   def getButtons(): js.Array[Button] = js.native
+  def getBeginButton(): Button = js.native
+  def getEndButton(): Button = js.native
+  def setBeginButton(): this.type = js.native
+  def setEndButton(): this.type = js.native
 }
