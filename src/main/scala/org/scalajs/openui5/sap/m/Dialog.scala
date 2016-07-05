@@ -53,4 +53,6 @@ class Dialog(id: js.UndefOr[String] = js.native,
 
   def close(): Unit = js.native
   def open(): Unit = js.native
+
+  def getButtons(): js.Array[Button] = js.native
 }
