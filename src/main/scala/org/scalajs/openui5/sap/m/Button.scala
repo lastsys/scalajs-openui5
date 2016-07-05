@@ -42,6 +42,7 @@ class Button(id: js.UndefOr[String] = js.native,
 
   def setText(text: String): this.type = js.native
   def setEnabled(enabled: Boolean): this.type = js.native
+  def setType(`type`: ButtonType): this.type = js.native
 
   def attachPress(function: js.Function): this.type = js.native
 }

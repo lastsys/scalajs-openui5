@@ -41,5 +41,6 @@ class InputBase(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: InputBaseSettings) = this(js.undefined, settings)
 
+  def setValue(value: String): this.type = js.native
   def getValue(): String = js.native
 }
