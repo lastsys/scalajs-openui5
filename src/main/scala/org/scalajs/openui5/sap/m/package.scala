@@ -18,4 +18,5 @@ package object m {
   type PopinDisplay = String
   type LabelDesign = String
   type DialogType = String
+  type SwitchType = String
 }
