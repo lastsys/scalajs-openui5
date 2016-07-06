@@ -192,6 +192,7 @@ class ManagedObject(id: js.UndefOr[String] = js.native,
   def getId(): String = js.native
 
   def bindAggregation(name: String, bindingInfo: js.Any): this.type = js.native
+  def getBindingInfo(name: String): js.Dynamic = js.native
 }
 
 @JSName("sap.ui.base.ManagedObject")
