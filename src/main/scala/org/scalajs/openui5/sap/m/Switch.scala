@@ -34,4 +34,6 @@ class Switch(id: js.UndefOr[String] = js.native,
              settings: js.UndefOr[SwitchSettings] = js.native) extends Control {
   def this(id: String) = this(id, js.undefined)
   def this(settings: SwitchSettings) = this(js.undefined, settings)
+
+  def getState(): Boolean = js.native
 }
