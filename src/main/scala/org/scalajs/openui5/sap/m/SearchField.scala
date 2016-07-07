@@ -46,4 +46,6 @@ class SearchField(id: js.UndefOr[String] = js.native,
   def this(settings: SearchFieldSettings) = this(js.undefined, settings)
 
   def getValue(): String = js.native
+
+  def suggest(): Unit = js.native
 }
