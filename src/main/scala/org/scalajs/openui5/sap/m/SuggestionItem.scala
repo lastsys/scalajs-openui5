@@ -17,6 +17,7 @@ class SuggestionItemSettingsBuilder(val dict: SettingsMap)
 trait SuggestionItemSetters[T <: js.Object, B <: Settings[T,_]]
   extends ControlSetters[T, B] {
 
+  def text(v: String) = setting("text", v)
   def icon(v: String) = setting("icon", v)
   def description(v: String) = setting("description", v)
 }
