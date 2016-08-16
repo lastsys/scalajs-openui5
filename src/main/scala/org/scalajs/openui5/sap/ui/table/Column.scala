@@ -61,5 +61,7 @@ class Column(id: js.UndefOr[String] = js.native,
 
   def setVisible(visible: Boolean): this.type = js.native
   def getVisible(): Boolean = js.native
+
+  def setMenu(menu: Menu): this.type = js.native
 }
 

@@ -37,4 +37,6 @@ class Column(id: js.UndefOr[String] = js.native,
              settings: js.UndefOr[ColumnSettings] = js.native) extends Control {
   def this(id: String) = this(id, js.undefined)
   def this(settings: ColumnSettings) = this(js.undefined, settings)
+
+
 }
