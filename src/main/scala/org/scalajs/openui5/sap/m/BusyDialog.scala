@@ -38,5 +38,6 @@ class BusyDialog(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: BusyDialogSettings) = this(js.undefined, settings)
 
+  def open(): this.type = js.native
   def close(): this.type = js.native
 }
