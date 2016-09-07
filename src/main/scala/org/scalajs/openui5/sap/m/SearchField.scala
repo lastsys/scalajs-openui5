@@ -48,4 +48,7 @@ class SearchField(id: js.UndefOr[String] = js.native,
   def getValue(): String = js.native
 
   def suggest(): Unit = js.native
+
+  def attachSuggest(function: js.Function): this.type = js.native
+  def attachSearch(function: js.Function): this.type = js.native
 }
