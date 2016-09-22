@@ -73,4 +73,6 @@ class ListBase(id: js.UndefOr[String] = js.native,
   def setSelectedItemById(id: String, select: Boolean = true): this.type = js.native
 
   def setMode(mode: ListMode): this.type = js.native
+
+  def attachSelectionChange(function: js.Function): this.type = js.native
 }
