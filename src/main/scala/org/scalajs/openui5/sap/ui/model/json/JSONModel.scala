@@ -1,6 +1,6 @@
 package org.scalajs.openui5.sap.ui.model.json
 
-import org.scalajs.openui5.sap.ui.model.ClientModel
+import org.scalajs.openui5.sap.ui.model.{ClientModel, Context}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
@@ -18,4 +18,8 @@ class JSONModel(data: js.UndefOr[js.Any] = js.undefined) extends ClientModel {
                merge: js.UndefOr[Boolean] = js.undefined,
                cache: js.UndefOr[Boolean] = js.undefined,
                headers: js.UndefOr[js.Dictionary[String]] = js.undefined): T = js.native
+  def setProperty(path: String,
+                  value: js.Any,
+                  context: js.UndefOr[Context] = js.undefined,
+                  asyncUpdate: js.UndefOr[Boolean] = js.undefined): Boolean = js.native
 }
