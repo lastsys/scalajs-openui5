@@ -79,6 +79,15 @@ class Table(id: js.UndefOr[String] = js.native,
   def this(id: String) = this(id, js.undefined)
   def this(settings: TableSettings) = this(js.undefined, settings)
 
+  /** Adds the given selection interval to the selection. In case of single
+    * selection the "indexTo" value will be used for as selected index.
+    *
+    * @param indexFrom Index from which.
+    * @param indexTo Indices of the items that shall additionally be selected.
+    * @return Reference to this in order to allow method chaining
+    */
+  def addSelectionInterval(indexFrom: Int, indexTo: Int): this.type = js.native
+
   /** Attaches event handler fnFunction to the 'columnVisibility' event of this
     * sap.ui.table.Table.
     *
